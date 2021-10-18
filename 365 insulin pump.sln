@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "365 insulin pump", "365 insulin pump\365 insulin pump.csproj", "{67B138EE-4B18-48EF-85A3-34679ED2F3BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{67B138EE-4B18-48EF-85A3-34679ED2F3BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67B138EE-4B18-48EF-85A3-34679ED2F3BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67B138EE-4B18-48EF-85A3-34679ED2F3BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67B138EE-4B18-48EF-85A3-34679ED2F3BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {25E90971-969C-4FED-95BE-056A034D42AF}
+	EndGlobalSection
+EndGlobal
