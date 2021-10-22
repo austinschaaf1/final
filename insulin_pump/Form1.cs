@@ -16,5 +16,36 @@ namespace insulin_pump
         {
             InitializeComponent();
         }
+        public void loadform(object Form) {
+            if (this.mainpanel.Controls.Count > 0) {
+                this.mainpanel.Controls.RemoveAt(0);   
+            }
+            Form f = Form as Form;
+            f.TopLevel = false;
+            f.Dock = DockStyle.Fill;
+            this.mainpanel.Controls.Add(f);
+            this.mainpanel.Tag = f;
+            f.Show();
+        }
+    
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            loadform(new Display1());
+        }
+
+        private void btn_display_2_Click(object sender, EventArgs e)
+        {
+            loadform(new Display2());
+        }
+
+        private void btn_clock_Click(object sender, EventArgs e)
+        {
+            loadform(new Clock());
+        }
     }
 }
