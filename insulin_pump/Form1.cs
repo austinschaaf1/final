@@ -13,7 +13,7 @@ namespace insulin_pump
     public partial class Form1 : Form
     {
         public Form1()
-        {
+        {//test
             InitializeComponent();
         }
         public void loadform(object Form) {
