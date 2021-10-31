@@ -47,5 +47,11 @@ namespace insulin_pump
         {
             loadform(new Clock());
         }
+
+        private void panelSide_Paint(object sender, PaintEventArgs e)
+        {
+            
+
+        }
     }
 }
