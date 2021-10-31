@@ -53,5 +53,13 @@ namespace insulin_pump
             
 
         }
+
+        private void mainpanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+        ///Creating test push
     }
 }

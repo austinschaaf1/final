@@ -112,6 +112,7 @@ namespace insulin_pump
             this.mainpanel.Name = "mainpanel";
             this.mainpanel.Size = new System.Drawing.Size(929, 527);
             this.mainpanel.TabIndex = 2;
+            this.mainpanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainpanel_Paint);
             // 
             // Form1
             // 
