@@ -35,12 +35,15 @@ namespace insulin_pump
             this.btn_display_1 = new System.Windows.Forms.Button();
             this.panelheader = new System.Windows.Forms.Panel();
             this.mainpanel = new System.Windows.Forms.Panel();
+            this.timeLbl = new System.Windows.Forms.Label();
+            this.panelSide.SuspendLayout();
             this.panelheader.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelSide
             // 
             this.panelSide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(76)))), ((int)(((byte)(217)))));
+            this.panelSide.Controls.Add(this.timeLbl);
             this.panelSide.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSide.Location = new System.Drawing.Point(0, 44);
             this.panelSide.Name = "panelSide";
@@ -114,6 +117,15 @@ namespace insulin_pump
             this.mainpanel.TabIndex = 2;
             this.mainpanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainpanel_Paint);
             // 
+            // timeLbl
+            // 
+            this.timeLbl.AutoSize = true;
+            this.timeLbl.Location = new System.Drawing.Point(59, 362);
+            this.timeLbl.Name = "timeLbl";
+            this.timeLbl.Size = new System.Drawing.Size(13, 13);
+            this.timeLbl.TabIndex = 0;
+            this.timeLbl.Text = "1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -126,6 +138,8 @@ namespace insulin_pump
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.panelSide.ResumeLayout(false);
+            this.panelSide.PerformLayout();
             this.panelheader.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -139,6 +153,7 @@ namespace insulin_pump
         private System.Windows.Forms.Button btn_display_1;
         private System.Windows.Forms.Button btn_clock;
         private System.Windows.Forms.Button btn_display_2;
+        private System.Windows.Forms.Label timeLbl;
     }
 }
 
