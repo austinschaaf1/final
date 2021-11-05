@@ -13,7 +13,7 @@ namespace insulin_pump
     public partial class Clock : Form
     {
         public Clock()
-        {//
+        {////
             InitializeComponent();
         }
     }
