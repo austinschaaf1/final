@@ -9,9 +9,25 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace insulin_pump
+
+
+   
 {
+
+  
+
     public partial class Form1 : Form
     {
+
+
+        public int setDisplayFlagOne()
+        {
+            return 1;
+        }
+
+        int displayFlag = 0;
+
+
         public Form1()
         {//test
             InitializeComponent();
@@ -35,7 +51,16 @@ namespace insulin_pump
 
         private void button1_Click(object sender, EventArgs e)
         {
-            loadform(new Display1());
+            Display1 display1 = new Display1();
+            if (displayFlag == 0)
+            {
+                loadform(display1);
+                displayFlag = setDisplayFlagOne();
+            }
+            display1.Refresh();
+
+
+
         }
 
         private void btn_display_2_Click(object sender, EventArgs e)
@@ -59,6 +84,16 @@ namespace insulin_pump
 
         }
 
+        private void testScenarioButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            Form2.GetForm.Show();
+
+
+        }
+
+   
 
         ///Creating test push
     }

@@ -16,5 +16,17 @@ namespace insulin_pump
         {
             InitializeComponent();
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        public void LabelTextUpdate(string messageText)
+        {
+
+            this.label3.Text = messageText;
+            
+        }
     }
 }
