@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomToggleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Clock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +132,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resorses\LOGO SMALL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resorses\green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resorses\red.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -51,15 +51,7 @@ namespace insulin_pump
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Display1 display1 = new Display1();
-            if (displayFlag == 0)
-            {
-                loadform(display1);
-                displayFlag = setDisplayFlagOne();
-            }
-            display1.Refresh();
-
-
+            loadform(new Display1());
 
         }
 
@@ -87,8 +79,10 @@ namespace insulin_pump
         private void testScenarioButton_Click(object sender, EventArgs e)
         {
             this.Hide();
+            var form2 = new Form2();
+            form2.FormClosed += (s,args) => this.Close();
+            form2.Show();
 
-            Form2.GetForm.Show();
 
 
         }
