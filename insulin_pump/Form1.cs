@@ -16,11 +16,14 @@ namespace insulin_pump
      
         public Form1()
         {
+        
+            InitializeComponent();
             System.Timers.Timer timer1 = new System.Timers.Timer();
             timer1.Interval = 1000; //1000 ms == 1second
             timer1.Elapsed += Time_changed;
             timer1.Start();
-            InitializeComponent();
+            Clock clk2 = new Clock();
+            clk2.Show(this);
         }
         public void loadform(object Form) {
             if (this.mainpanel.Controls.Count > 0) {
@@ -41,16 +44,34 @@ namespace insulin_pump
         {
             timeLbl.Invoke((MethodInvoker)delegate
             {
-               
-                TimeSpan FormatedTime = TimeSpan.FromSeconds(1);
+                String time = timeLbl.Text;//get unedited time
+                Int32 count = 3;//amount to break apart the string
+                String[] timeParts = time.Split(':', (char)count, (char)StringSplitOptions.RemoveEmptyEntries);//broken apart string
+
+                Int32 seconds = int.Parse(timeParts[2]) + 1;
+                Int32 minutes = int.Parse(timeParts[1]);
+                Int32 hours = int.Parse(timeParts[0]);
+                if (seconds == 60) {
+                    seconds = 0;
+                    minutes += 1;
+                }
+                if (minutes == 60) {
+                    minutes = 0;
+                    hours += 1;
+                }
+                if (hours == 24) {
+                    hours = 0;
+                }
                 
-                string answer = string.Format("{0:D2}h:{1:D2}m:{2:D2}s",
-                FormatedTime.Hours,
-                FormatedTime.Minutes,
-                FormatedTime.Seconds,
-                FormatedTime.Milliseconds);
-                timeLbl.Text = (answer).ToString();
+
+                String newTime = $"{hours}:{minutes}:{seconds}";
+                timeLbl.Text = newTime;
             });
+        }
+        public string TimeLlbText {
+            get {
+                return this.timeLbl.Text;
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
