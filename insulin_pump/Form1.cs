@@ -19,11 +19,13 @@ namespace insulin_pump
         
             InitializeComponent();
             System.Timers.Timer timer1 = new System.Timers.Timer();
+            //TimeSpan start = DateTime.Now;
             timer1.Interval = 1000; //1000 ms == 1second
             timer1.Elapsed += Time_changed;
             timer1.Start();
-            Clock clk2 = new Clock();
-            clk2.Show(this);
+            
+            //Clock clk2 = new Clock();
+            // clk2.Show(this);
         }
         public void loadform(object Form) {
             if (this.mainpanel.Controls.Count > 0) {
@@ -91,7 +93,7 @@ namespace insulin_pump
 
         private void btn_clock_Click(object sender, EventArgs e)
         {
-            loadform(new Clock());
+            loadform(new Clock(timeLbl.Text));
         }
 
         private void panelSide_Paint(object sender, PaintEventArgs e)
@@ -106,6 +108,6 @@ namespace insulin_pump
         }
 
 
-        ///Creating test push
+        
     }
 }
