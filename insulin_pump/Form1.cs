@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Timers;
 
 namespace insulin_pump
 
@@ -31,6 +32,11 @@ namespace insulin_pump
         public Form1()
         {//test
             InitializeComponent();
+            System.Timers.Timer timer1 = new System.Timers.Timer();
+            //TimeSpan start = DateTime.Now;
+            timer1.Interval = 1000; //1000 ms == 1second
+            timer1.Elapsed += Time_changed;
+            timer1.Start();
         }
         public void loadform(object Form) {
             if (this.mainpanel.Controls.Count > 0) {
@@ -43,10 +49,52 @@ namespace insulin_pump
             this.mainpanel.Tag = f;
             f.Show();
         }
-    
+
+        private void Time_changed(object sender, ElapsedEventArgs e)
+        {
+            try
+            {
+                timeLbl.Invoke((MethodInvoker)delegate
+                {
+                    String time = timeLbl.Text;//get unedited time
+                    Int32 count = 3;//amount to break apart the string
+                    String[] timeParts = time.Split(':', (char)count, (char)StringSplitOptions.RemoveEmptyEntries);//broken apart string
+
+                    Int32 seconds = int.Parse(timeParts[2]) + 1;
+                    Int32 minutes = int.Parse(timeParts[1]);
+                    Int32 hours = int.Parse(timeParts[0]);
+                    if (seconds == 60)
+                    {
+                        seconds = 0;
+                        minutes += 1;
+                    }
+                    if (minutes == 60)
+                    {
+                        minutes = 0;
+                        hours += 1;
+                    }
+                    if (hours == 24)
+                    {
+                        hours = 0;
+                    }
+
+
+                    String newTime = $"{hours}:{minutes}:{seconds}";
+                    timeLbl.Text = newTime;
+                });
+            }
+            catch { }
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+        public string TimeLlbText
+        {
+            get
+            {
+                return this.timeLbl.Text;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -62,7 +110,7 @@ namespace insulin_pump
 
         private void btn_clock_Click(object sender, EventArgs e)
         {
-            loadform(new Clock());
+            loadform(new Clock(timeLbl.Text));
         }
 
         private void panelSide_Paint(object sender, PaintEventArgs e)
