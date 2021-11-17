@@ -1,5 +1,4 @@
-﻿
-namespace insulin_pump
+﻿namespace insulin_pump
 {
     partial class Clock
     {
@@ -29,49 +28,76 @@ namespace insulin_pump
         /// </summary>
         private void InitializeComponent()
         {
-            this.label2 = new System.Windows.Forms.Label();
+            this.Clock1 = new CircularProgressBar.CircularProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label2
+            // Clock1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(269, 232);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 42);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Clock";
+            this.Clock1.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.Clock1.AnimationSpeed = 500;
+            this.Clock1.BackColor = System.Drawing.Color.Transparent;
+            this.Clock1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Clock1.ForeColor = System.Drawing.Color.White;
+            this.Clock1.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(76)))), ((int)(((byte)(217)))));
+            this.Clock1.InnerMargin = 2;
+            this.Clock1.InnerWidth = -1;
+            this.Clock1.Location = new System.Drawing.Point(198, 60);
+            this.Clock1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Clock1.MarqueeAnimationSpeed = 6000;
+            this.Clock1.Name = "Clock1";
+            this.Clock1.OuterColor = System.Drawing.Color.Gray;
+            this.Clock1.OuterMargin = -25;
+            this.Clock1.OuterWidth = 26;
+            this.Clock1.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(217)))), ((int)(((byte)(50)))));
+            this.Clock1.ProgressWidth = 25;
+            this.Clock1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Clock1.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
+            this.Clock1.Size = new System.Drawing.Size(395, 360);
+            this.Clock1.StartAngle = 270;
+            this.Clock1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.Clock1.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.Clock1.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
+            this.Clock1.SubscriptText = "";
+            this.Clock1.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.Clock1.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
+            this.Clock1.SuperscriptText = "";
+            this.Clock1.TabIndex = 0;
+            this.Clock1.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.Clock1.Value = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(269, 176);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(193, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 42);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Clock";
+            this.label1.Size = new System.Drawing.Size(400, 39);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Time until dosage reset";
             // 
             // Clock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(170)))), ((int)(((byte)(86)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.Clock1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Clock";
             this.Text = "Clock";
+            this.Load += new System.EventHandler(this.Clock_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
+        public CircularProgressBar.CircularProgressBar Clock1;
+        private System.Windows.Forms.Label label1;
+
         #endregion
 
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        //private CircularProgressBar.CircularProgressBar circularProgressBar1;
     }
 }
