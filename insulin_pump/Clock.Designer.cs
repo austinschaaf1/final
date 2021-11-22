@@ -43,7 +43,7 @@
             this.Clock1.InnerMargin = 2;
             this.Clock1.InnerWidth = -1;
             this.Clock1.Location = new System.Drawing.Point(198, 60);
-            this.Clock1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Clock1.Margin = new System.Windows.Forms.Padding(2);
             this.Clock1.MarqueeAnimationSpeed = 6000;
             this.Clock1.Name = "Clock1";
             this.Clock1.OuterColor = System.Drawing.Color.Gray;
@@ -81,7 +81,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(170)))), ((int)(((byte)(86)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(929, 527);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Clock1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
