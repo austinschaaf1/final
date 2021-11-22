@@ -20,14 +20,7 @@ namespace insulin_pump
     public partial class Form1 : Form
     {
 
-
-        public int setDisplayFlagOne()
-        {
-            return 1;
-        }
-
-        int displayFlag = 0;
-
+        public Display1 display1 = new Display1();
 
         public Form1()
         {//test
@@ -38,6 +31,7 @@ namespace insulin_pump
             timer1.Elapsed += Time_changed;
             timer1.Start();
         }
+
         public void loadform(object Form) {
             if (this.mainpanel.Controls.Count > 0) {
                 this.mainpanel.Controls.RemoveAt(0);   
@@ -97,9 +91,9 @@ namespace insulin_pump
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void button1_Click(object sender, EventArgs e)
         {
-            loadform(new Display1());
+            loadform(display1);
 
         }
 
@@ -126,16 +120,22 @@ namespace insulin_pump
 
         private void testScenarioButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            var form2 = new Form2();
-            form2.FormClosed += (s,args) => this.Close();
-            form2.Show();
+
+
+
 
 
 
         }
 
-   
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (!Application.OpenForms.OfType<TestScenarios>().Any())
+            {
+                TestScenarios form2 = new TestScenarios(this);
+                form2.Show(this);
+            }
+        }
 
         ///Creating test push
     }
