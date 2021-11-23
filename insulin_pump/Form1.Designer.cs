@@ -35,12 +35,12 @@ namespace insulin_pump
             this.label2 = new System.Windows.Forms.Label();
             this.timeLbl = new System.Windows.Forms.Label();
             this.panelheader = new System.Windows.Forms.Panel();
-            this.btn_clock = new System.Windows.Forms.Button();
-            this.btn_display_1 = new System.Windows.Forms.Button();
-            this.btn_display_2 = new System.Windows.Forms.Button();
-            this.mainpanel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.testScenariosButton = new System.Windows.Forms.Button();
+            this.btn_clock = new System.Windows.Forms.Button();
+            this.btn_display_2 = new System.Windows.Forms.Button();
+            this.btn_display_1 = new System.Windows.Forms.Button();
+            this.mainpanel = new System.Windows.Forms.Panel();
             this.panelSide.SuspendLayout();
             this.panelheader.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -87,7 +87,7 @@ namespace insulin_pump
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(20, 3);
+            this.label2.Location = new System.Drawing.Point(7, 3);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(241, 31);
             this.label2.TabIndex = 2;
@@ -113,60 +113,6 @@ namespace insulin_pump
             this.panelheader.Name = "panelheader";
             this.panelheader.Size = new System.Drawing.Size(1180, 44);
             this.panelheader.TabIndex = 1;
-            // 
-            // btn_clock
-            // 
-            this.btn_clock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(217)))), ((int)(((byte)(26)))));
-            this.btn_clock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_clock.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_clock.Image = global::insulin_pump.Properties.Resources.LOGO_SMALL;
-            this.btn_clock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_clock.Location = new System.Drawing.Point(901, 3);
-            this.btn_clock.Name = "btn_clock";
-            this.btn_clock.Size = new System.Drawing.Size(251, 38);
-            this.btn_clock.TabIndex = 2;
-            this.btn_clock.Text = "Clock";
-            this.btn_clock.UseVisualStyleBackColor = false;
-            this.btn_clock.Click += new System.EventHandler(this.btn_clock_Click);
-            // 
-            // btn_display_1
-            // 
-            this.btn_display_1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(217)))), ((int)(((byte)(26)))));
-            this.btn_display_1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_display_1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_display_1.Image = global::insulin_pump.Properties.Resources.LOGO_SMALL;
-            this.btn_display_1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_display_1.Location = new System.Drawing.Point(339, 3);
-            this.btn_display_1.Name = "btn_display_1";
-            this.btn_display_1.Size = new System.Drawing.Size(251, 38);
-            this.btn_display_1.TabIndex = 0;
-            this.btn_display_1.Text = "Display 1";
-            this.btn_display_1.UseVisualStyleBackColor = false;
-            this.btn_display_1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btn_display_2
-            // 
-            this.btn_display_2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(217)))), ((int)(((byte)(26)))));
-            this.btn_display_2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_display_2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_display_2.Image = global::insulin_pump.Properties.Resources.LOGO_SMALL;
-            this.btn_display_2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_display_2.Location = new System.Drawing.Point(620, 3);
-            this.btn_display_2.Name = "btn_display_2";
-            this.btn_display_2.Size = new System.Drawing.Size(251, 38);
-            this.btn_display_2.TabIndex = 1;
-            this.btn_display_2.Text = "Display 2";
-            this.btn_display_2.UseVisualStyleBackColor = false;
-            this.btn_display_2.Click += new System.EventHandler(this.btn_display_2_Click);
-            // 
-            // mainpanel
-            // 
-            this.mainpanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainpanel.Location = new System.Drawing.Point(251, 44);
-            this.mainpanel.Name = "mainpanel";
-            this.mainpanel.Size = new System.Drawing.Size(929, 527);
-            this.mainpanel.TabIndex = 2;
-            this.mainpanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainpanel_Paint);
             // 
             // tableLayoutPanel1
             // 
@@ -202,6 +148,60 @@ namespace insulin_pump
             this.testScenariosButton.Text = "Test Scenarios";
             this.testScenariosButton.UseVisualStyleBackColor = false;
             this.testScenariosButton.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // btn_clock
+            // 
+            this.btn_clock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(217)))), ((int)(((byte)(26)))));
+            this.btn_clock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_clock.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_clock.Image = global::insulin_pump.Properties.Resources.LOGO_SMALL;
+            this.btn_clock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_clock.Location = new System.Drawing.Point(901, 3);
+            this.btn_clock.Name = "btn_clock";
+            this.btn_clock.Size = new System.Drawing.Size(251, 38);
+            this.btn_clock.TabIndex = 2;
+            this.btn_clock.Text = "Clock";
+            this.btn_clock.UseVisualStyleBackColor = false;
+            this.btn_clock.Click += new System.EventHandler(this.btn_clock_Click);
+            // 
+            // btn_display_2
+            // 
+            this.btn_display_2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(217)))), ((int)(((byte)(26)))));
+            this.btn_display_2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_display_2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_display_2.Image = global::insulin_pump.Properties.Resources.LOGO_SMALL;
+            this.btn_display_2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_display_2.Location = new System.Drawing.Point(620, 3);
+            this.btn_display_2.Name = "btn_display_2";
+            this.btn_display_2.Size = new System.Drawing.Size(251, 38);
+            this.btn_display_2.TabIndex = 1;
+            this.btn_display_2.Text = "Display 2";
+            this.btn_display_2.UseVisualStyleBackColor = false;
+            this.btn_display_2.Click += new System.EventHandler(this.btn_display_2_Click);
+            // 
+            // btn_display_1
+            // 
+            this.btn_display_1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(217)))), ((int)(((byte)(26)))));
+            this.btn_display_1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_display_1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_display_1.Image = global::insulin_pump.Properties.Resources.LOGO_SMALL;
+            this.btn_display_1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_display_1.Location = new System.Drawing.Point(339, 3);
+            this.btn_display_1.Name = "btn_display_1";
+            this.btn_display_1.Size = new System.Drawing.Size(251, 38);
+            this.btn_display_1.TabIndex = 0;
+            this.btn_display_1.Text = "Display 1";
+            this.btn_display_1.UseVisualStyleBackColor = false;
+            this.btn_display_1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // mainpanel
+            // 
+            this.mainpanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainpanel.Location = new System.Drawing.Point(251, 44);
+            this.mainpanel.Name = "mainpanel";
+            this.mainpanel.Size = new System.Drawing.Size(929, 527);
+            this.mainpanel.TabIndex = 2;
+            this.mainpanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainpanel_Paint);
             // 
             // Form1
             // 

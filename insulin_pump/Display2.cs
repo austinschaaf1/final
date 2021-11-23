@@ -15,9 +15,16 @@ namespace insulin_pump
         public Display2()
         {
             InitializeComponent();
+            lastDoseTimeLabel.Text = DateTime.Now.ToLocalTime().ToString();
         }
 
         private void Display2_Load(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void chart1_Click(object sender, EventArgs e)
         {
 
         }
