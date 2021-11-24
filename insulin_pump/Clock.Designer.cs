@@ -1,4 +1,6 @@
-﻿namespace insulin_pump
+﻿using System.Drawing;
+
+namespace insulin_pump
 {
     partial class Clock
     {
@@ -70,6 +72,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Location = new System.Drawing.Point(193, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(400, 39);
@@ -80,7 +83,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(170)))), ((int)(((byte)(86)))));
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(929, 527);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Clock1);

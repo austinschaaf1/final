@@ -17,7 +17,13 @@ namespace insulin_pump
         public Clock(string time)
         {//test
             this.SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+          
             InitializeComponent();
+            this.BackColor = ColorTranslator.FromHtml("#11258C"); // set background of form to AAA safe contrast color
+            label1.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // set header color to AAA safe color
+            Clock1.InnerColor = ColorTranslator.FromHtml("#304CD9"); // set inside of clock to AA safe color
+            Clock1.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // set inside of clock Text to AA safe color
+            Clock1.ProgressColor = ColorTranslator.FromHtml("#71D91A"); // set clock progreess color to AA safe color
             Clock1.Text = time;
             System.Timers.Timer timer1 = new System.Timers.Timer();
             timer1.Interval = 1000; //1000 ms == 1second
