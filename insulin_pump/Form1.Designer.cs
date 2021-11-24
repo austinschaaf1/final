@@ -30,9 +30,9 @@ namespace insulin_pump
         private void InitializeComponent()
         {
             this.panelSide = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.BatterylvlLbl = new System.Windows.Forms.Label();
+            this.RemainingDoseslbl = new System.Windows.Forms.Label();
+            this.QuickNotificationlbl = new System.Windows.Forms.Label();
             this.timeLbl = new System.Windows.Forms.Label();
             this.panelheader = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -41,6 +41,7 @@ namespace insulin_pump
             this.btn_display_2 = new System.Windows.Forms.Button();
             this.btn_display_1 = new System.Windows.Forms.Button();
             this.mainpanel = new System.Windows.Forms.Panel();
+            this.Line = new System.Windows.Forms.Label();
             this.panelSide.SuspendLayout();
             this.panelheader.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -49,9 +50,10 @@ namespace insulin_pump
             // panelSide
             // 
             this.panelSide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(76)))), ((int)(((byte)(217)))));
-            this.panelSide.Controls.Add(this.label4);
-            this.panelSide.Controls.Add(this.label3);
-            this.panelSide.Controls.Add(this.label2);
+            this.panelSide.Controls.Add(this.Line);
+            this.panelSide.Controls.Add(this.BatterylvlLbl);
+            this.panelSide.Controls.Add(this.RemainingDoseslbl);
+            this.panelSide.Controls.Add(this.QuickNotificationlbl);
             this.panelSide.Controls.Add(this.timeLbl);
             this.panelSide.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSide.Location = new System.Drawing.Point(0, 44);
@@ -60,38 +62,38 @@ namespace insulin_pump
             this.panelSide.TabIndex = 0;
             this.panelSide.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSide_Paint);
             // 
-            // label4
+            // BatterylvlLbl
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(12, 489);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(163, 29);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Battery Level: ";
+            this.BatterylvlLbl.AutoSize = true;
+            this.BatterylvlLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BatterylvlLbl.ForeColor = System.Drawing.Color.White;
+            this.BatterylvlLbl.Location = new System.Drawing.Point(12, 489);
+            this.BatterylvlLbl.Name = "BatterylvlLbl";
+            this.BatterylvlLbl.Size = new System.Drawing.Size(163, 29);
+            this.BatterylvlLbl.TabIndex = 4;
+            this.BatterylvlLbl.Text = "Battery Level: ";
             // 
-            // label3
+            // RemainingDoseslbl
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(12, 48);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(216, 29);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Remaining Doses: ";
+            this.RemainingDoseslbl.AutoSize = true;
+            this.RemainingDoseslbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RemainingDoseslbl.ForeColor = System.Drawing.Color.White;
+            this.RemainingDoseslbl.Location = new System.Drawing.Point(8, 58);
+            this.RemainingDoseslbl.Name = "RemainingDoseslbl";
+            this.RemainingDoseslbl.Size = new System.Drawing.Size(216, 29);
+            this.RemainingDoseslbl.TabIndex = 3;
+            this.RemainingDoseslbl.Text = "Remaining Doses: ";
             // 
-            // label2
+            // QuickNotificationlbl
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(7, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(241, 31);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Quick Notifications";
+            this.QuickNotificationlbl.AutoSize = true;
+            this.QuickNotificationlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QuickNotificationlbl.ForeColor = System.Drawing.Color.White;
+            this.QuickNotificationlbl.Location = new System.Drawing.Point(7, 3);
+            this.QuickNotificationlbl.Name = "QuickNotificationlbl";
+            this.QuickNotificationlbl.Size = new System.Drawing.Size(241, 31);
+            this.QuickNotificationlbl.TabIndex = 2;
+            this.QuickNotificationlbl.Text = "Quick Notifications";
             // 
             // timeLbl
             // 
@@ -138,8 +140,8 @@ namespace insulin_pump
             // 
             this.testScenariosButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(217)))), ((int)(((byte)(26)))));
             this.testScenariosButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.testScenariosButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.testScenariosButton.Image = global::insulin_pump.Properties.Resources.LOGO_SMALL;
+            this.testScenariosButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.testScenariosButton.ForeColor = System.Drawing.Color.White;
             this.testScenariosButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.testScenariosButton.Location = new System.Drawing.Point(3, 3);
             this.testScenariosButton.Name = "testScenariosButton";
@@ -153,8 +155,8 @@ namespace insulin_pump
             // 
             this.btn_clock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(217)))), ((int)(((byte)(26)))));
             this.btn_clock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_clock.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_clock.Image = global::insulin_pump.Properties.Resources.LOGO_SMALL;
+            this.btn_clock.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_clock.ForeColor = System.Drawing.Color.Black;
             this.btn_clock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_clock.Location = new System.Drawing.Point(901, 3);
             this.btn_clock.Name = "btn_clock";
@@ -168,14 +170,14 @@ namespace insulin_pump
             // 
             this.btn_display_2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(217)))), ((int)(((byte)(26)))));
             this.btn_display_2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_display_2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_display_2.Image = global::insulin_pump.Properties.Resources.LOGO_SMALL;
+            this.btn_display_2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_display_2.ForeColor = System.Drawing.Color.White;
             this.btn_display_2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_display_2.Location = new System.Drawing.Point(620, 3);
             this.btn_display_2.Name = "btn_display_2";
             this.btn_display_2.Size = new System.Drawing.Size(251, 38);
             this.btn_display_2.TabIndex = 1;
-            this.btn_display_2.Text = "Display 2";
+            this.btn_display_2.Text = "Administer Insulin";
             this.btn_display_2.UseVisualStyleBackColor = false;
             this.btn_display_2.Click += new System.EventHandler(this.btn_display_2_Click);
             // 
@@ -183,14 +185,14 @@ namespace insulin_pump
             // 
             this.btn_display_1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(217)))), ((int)(((byte)(26)))));
             this.btn_display_1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_display_1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_display_1.Image = global::insulin_pump.Properties.Resources.LOGO_SMALL;
+            this.btn_display_1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_display_1.ForeColor = System.Drawing.Color.White;
             this.btn_display_1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_display_1.Location = new System.Drawing.Point(339, 3);
             this.btn_display_1.Name = "btn_display_1";
             this.btn_display_1.Size = new System.Drawing.Size(251, 38);
             this.btn_display_1.TabIndex = 0;
-            this.btn_display_1.Text = "Display 1";
+            this.btn_display_1.Text = "Messages";
             this.btn_display_1.UseVisualStyleBackColor = false;
             this.btn_display_1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -202,6 +204,17 @@ namespace insulin_pump
             this.mainpanel.Size = new System.Drawing.Size(929, 527);
             this.mainpanel.TabIndex = 2;
             this.mainpanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainpanel_Paint);
+            // 
+            // Line
+            // 
+            this.Line.AutoSize = true;
+            this.Line.BackColor = System.Drawing.Color.Transparent;
+            this.Line.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.Line.Location = new System.Drawing.Point(0, 34);
+            this.Line.Name = "Line";
+            this.Line.Size = new System.Drawing.Size(253, 13);
+            this.Line.TabIndex = 5;
+            this.Line.Text = "_________________________________________";
             // 
             // Form1
             // 
@@ -232,11 +245,12 @@ namespace insulin_pump
         private System.Windows.Forms.Button btn_clock;
         private System.Windows.Forms.Button btn_display_2;
         public System.Windows.Forms.Label timeLbl;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label QuickNotificationlbl;
+        private System.Windows.Forms.Label RemainingDoseslbl;
+        private System.Windows.Forms.Label BatterylvlLbl;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button testScenariosButton;
+        private System.Windows.Forms.Label Line;
     }
 }
 
