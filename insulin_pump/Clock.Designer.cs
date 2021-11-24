@@ -46,7 +46,7 @@ namespace insulin_pump
             this.Clock1.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(76)))), ((int)(((byte)(217)))));
             this.Clock1.InnerMargin = 2;
             this.Clock1.InnerWidth = -1;
-            this.Clock1.Location = new System.Drawing.Point(198, 60);
+            this.Clock1.Location = new System.Drawing.Point(300, 50);
             this.Clock1.Margin = new System.Windows.Forms.Padding(2);
             this.Clock1.MarqueeAnimationSpeed = 6000;
             this.Clock1.Name = "Clock1";
@@ -73,10 +73,11 @@ namespace insulin_pump
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(193, 9);
+            this.label1.Location = new System.Drawing.Point(295, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(400, 39);
             this.label1.TabIndex = 1;

@@ -53,6 +53,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clockHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="clockHelp.Designer.cs">
+      <DependentUpon>clockHelp.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomToggleButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -80,6 +86,24 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="insilinHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="insilinHelp.Designer.cs">
+      <DependentUpon>insilinHelp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="messageHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="messageHelp.Designer.cs">
+      <DependentUpon>messageHelp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="settings.Designer.cs">
+      <DependentUpon>settings.cs</DependentUpon>
+    </Compile>
     <Compile Include="TestScenarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +121,9 @@
     <EmbeddedResource Include="Clock.resx">
       <DependentUpon>Clock.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="clockHelp.resx">
+      <DependentUpon>clockHelp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Display1.resx">
       <DependentUpon>Display1.cs</DependentUpon>
     </EmbeddedResource>
@@ -105,6 +132,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="insilinHelp.resx">
+      <DependentUpon>insilinHelp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="messageHelp.resx">
+      <DependentUpon>messageHelp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="settings.resx">
+      <DependentUpon>settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TestScenarios.resx">
       <DependentUpon>TestScenarios.cs</DependentUpon>
@@ -146,6 +182,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resorses\red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resorses\settings.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
