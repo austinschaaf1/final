@@ -13,7 +13,9 @@ namespace insulin_pump
 {
     public partial class Form1 : Form
     {
+        
         public Display1 display1 = new Display1();
+        public Int32 isClockOpen = 0;
         public Form1()
         {
             InitializeComponent();
@@ -104,6 +106,14 @@ namespace insulin_pump
         {
 
         }
+        public void timeUpdateTestS(String messageText)
+        {
+            timeLbl.Text = messageText;
+            if (isClockOpen == 1)
+            {
+                loadform(new Clock(messageText));
+            }
+        }
         public string TimeLlbText
         {
             get
@@ -127,6 +137,7 @@ namespace insulin_pump
             btn_clock.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // Set text to safe color
             btn_clock.Font = new Font("Century Gothic", 12, FontStyle.Bold);
             loadform(display1);
+            isClockOpen = 0;
 
         }
 
@@ -145,6 +156,7 @@ namespace insulin_pump
             btn_clock.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // Set text to safe color
             btn_clock.Font = new Font("Century Gothic", 12, FontStyle.Bold);
             loadform(new Display2());
+            isClockOpen = 0;
         }
 
         private void btn_clock_Click(object sender, EventArgs e)
@@ -162,6 +174,7 @@ namespace insulin_pump
             btn_clock.ForeColor = ColorTranslator.FromHtml("#000000"); // Set text to safe color
             btn_clock.Font = new Font("Century Gothic", 14, FontStyle.Bold);
             loadform(new Clock(timeLbl.Text));
+            isClockOpen = 1;
         }
 
         private void panelSide_Paint(object sender, PaintEventArgs e)

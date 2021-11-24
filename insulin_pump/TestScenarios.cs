@@ -20,6 +20,7 @@ namespace insulin_pump
         int pumpFailure = 0;
         int deliveryFailing = 0;
         Display1 display1 = new Display1();
+
         Form1 mainForm;
 
 
@@ -27,7 +28,11 @@ namespace insulin_pump
         {
             InitializeComponent();
             this.mainForm = passedForm;
-            
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "HH':'mm':'ss";
+            dateTimePicker1.ShowUpDown = true;
+
+
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -58,9 +63,9 @@ namespace insulin_pump
             //    }
             //}
 
-  
-            
 
+
+            mainForm.timeUpdateTestS(dateTimePicker1.Text);
 
             if (resevoirRemoval == 1)
             {

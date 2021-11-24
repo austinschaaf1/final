@@ -78,11 +78,17 @@ namespace insulin_pump
 
             throw new NotImplementedException();
         }
-
+        public void timeUpdateTestS2(String messageText)
+        {
+            Clock1.Text = messageText;
+            
+        }
         private void Clock_Load(object sender, EventArgs e)
         {
 
 
         }
+
+
     }
 }

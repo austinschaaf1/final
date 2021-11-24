@@ -30,8 +30,10 @@ namespace insulin_pump
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Clock1 = new CircularProgressBar.CircularProgressBar();
             this.label1 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // Clock1
@@ -66,6 +68,7 @@ namespace insulin_pump
             this.Clock1.SuperscriptText = "";
             this.Clock1.TabIndex = 0;
             this.Clock1.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.toolTip1.SetToolTip(this.Clock1, "Total remaining time until doses reset. Once time reaches 24 doses will reset");
             this.Clock1.Value = 1;
             // 
             // label1
@@ -98,6 +101,7 @@ namespace insulin_pump
 
         public CircularProgressBar.CircularProgressBar Clock1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolTip toolTip1;
 
         #endregion
 
