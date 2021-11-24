@@ -16,6 +16,9 @@ namespace insulin_pump
         
         public Display1 display1 = new Display1();
         public Int32 isClockOpen = 0;
+        public Int32 whatIsOpen = 0;//0=display1 1= display2  2 = clock 3= help 4 = settings
+        public Int32 isHelpOpen = 0;
+        public Int32 isSettingsOpen = 0;
         public Form1()
         {
             InitializeComponent();
@@ -35,6 +38,7 @@ namespace insulin_pump
             BatterylvlLbl.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // set battery level color to AA safe color
             testScenariosButton.BackColor = ColorTranslator.FromHtml("#4D8C18"); // set test senarios color to AA safe color
             testScenariosButton.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // Test start out white color
+            battryLbl.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // set battry color to AA safe color
 
             btn_display_1.BackColor = ColorTranslator.FromHtml("#71D91A"); // set display 1 color to AA safe color
             btn_display_1.ForeColor = ColorTranslator.FromHtml("#000000");
@@ -48,6 +52,15 @@ namespace insulin_pump
             btn_clock.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // Set text to safe color
             btn_clock.Font = new Font("Century Gothic", 12, FontStyle.Bold);
 
+            Helpbtn.BackColor = ColorTranslator.FromHtml("#4D8C18"); // set help color to AA safe color
+            Helpbtn.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // Set text to safe color
+
+            settingbtn.BackColor = ColorTranslator.FromHtml("#4D8C18"); // set help color to AA safe color
+            settingbtn.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // Set text to safe color
+
+
+            whatIsOpen = 0;//display 1 is open
+            isSettingsOpen = 0;
             System.Timers.Timer timer1 = new System.Timers.Timer();
             timer1.Interval = 1000; //1000 ms == 1second
             timer1.Elapsed += Time_changed;
@@ -138,6 +151,11 @@ namespace insulin_pump
             btn_clock.Font = new Font("Century Gothic", 12, FontStyle.Bold);
             loadform(display1);
             isClockOpen = 0;
+            whatIsOpen = 0; // display 1 is open
+            isHelpOpen = 0;//clicking this will close help page
+            isSettingsOpen = 0;
+            Helpbtn.Text = "Help";
+            settingbtn.Text = "Settings";
 
         }
 
@@ -157,6 +175,11 @@ namespace insulin_pump
             btn_clock.Font = new Font("Century Gothic", 12, FontStyle.Bold);
             loadform(new Display2());
             isClockOpen = 0;
+            whatIsOpen = 1; //display2 is open
+            isHelpOpen = 0;//clicking this will close help page
+            isSettingsOpen = 0;
+            Helpbtn.Text = "Help";
+            settingbtn.Text = "Settings";
         }
 
         private void btn_clock_Click(object sender, EventArgs e)
@@ -175,6 +198,11 @@ namespace insulin_pump
             btn_clock.Font = new Font("Century Gothic", 14, FontStyle.Bold);
             loadform(new Clock(timeLbl.Text));
             isClockOpen = 1;
+            whatIsOpen = 2;// clock is open
+            isHelpOpen = 0;//clicking this will close help page
+            isSettingsOpen = 0;
+            Helpbtn.Text = "Help";
+            settingbtn.Text = "Settings";
         }
 
         private void panelSide_Paint(object sender, PaintEventArgs e)
@@ -205,6 +233,72 @@ namespace insulin_pump
                 TestScenarios form2 = new TestScenarios(this);
                 form2.Show(this);
             }
+        }
+
+        private void Helpbtn_Click(object sender, EventArgs e)
+        {
+            if (whatIsOpen == 0 && isHelpOpen == 0)
+            {
+                loadform(new messageHelp());
+                Helpbtn.Text = "Close help page";
+                isHelpOpen = 1;
+            }
+            else if (whatIsOpen == 1 && isHelpOpen == 0)
+            {
+                loadform(new insilinHelp());
+                Helpbtn.Text = "Close help page";
+                isHelpOpen = 1;
+            }
+            else if (whatIsOpen == 2 && isHelpOpen == 0) {
+                loadform(new clockHelp());
+                Helpbtn.Text = "Close help page";
+                isHelpOpen = 1;
+            }
+            else if (whatIsOpen == 4 && isHelpOpen == 0)
+            {
+                loadform(new messageHelp());
+                Helpbtn.Text = "Close help page";
+                isHelpOpen = 1;
+            }
+
+            else if (whatIsOpen == 0 && isHelpOpen == 1)
+            {
+                loadform(display1);
+                Helpbtn.Text = "Help";
+                isHelpOpen = 0;
+            }
+            else if (whatIsOpen == 1 && isHelpOpen == 1)
+            {
+                loadform(new Display2());
+                Helpbtn.Text = "Help";
+                isHelpOpen = 0;
+            }
+            else if (whatIsOpen == 2 && isHelpOpen == 1)
+            {
+                loadform(new Clock(timeLbl.Text));
+                Helpbtn.Text = "Help";
+                isHelpOpen = 0;
+            }
+            else if (whatIsOpen == 4 && isHelpOpen == 1)
+            {
+                loadform(new settings());
+                Helpbtn.Text = "Help";
+                isHelpOpen = 0;
+            }
+        }
+
+        private void settingbtn_Click(object sender, EventArgs e)
+        {
+         
+                loadform(new settings());
+                whatIsOpen = 4;
+   
+     
+            Helpbtn.Text = "Help";
+
+
+
+
         }
 
         ///Creating test push
