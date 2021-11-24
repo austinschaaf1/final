@@ -16,6 +16,7 @@ namespace insulin_pump
         public Display1()
         {
             InitializeComponent();
+            this.BackColor = ColorTranslator.FromHtml("#11258C"); // set background of form to AAA safe contrast color
         }
 
         public void resevoirUpdate(String messageText)

@@ -45,6 +45,8 @@ namespace insulin_pump
             this.resevoirRemovalLabel = new System.Windows.Forms.Label();
             this.resevoirToggle = new insulin_pump.RJToggleButton();
             this.runTestButton = new loanCalculator.RoundedButton();
+            this.timeLbl = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.roundPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,7 +56,8 @@ namespace insulin_pump
             this.roundPanel1.ColumnCount = 2;
             this.roundPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.roundPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 140F));
-            this.roundPanel1.Controls.Add(this.resetButton, 0, 8);
+            this.roundPanel1.Controls.Add(this.dateTimePicker1, 1, 7);
+            this.roundPanel1.Controls.Add(this.resetButton, 8, 8);
             this.roundPanel1.Controls.Add(this.deliveryToggle, 1, 6);
             this.roundPanel1.Controls.Add(this.pumpToggle, 1, 5);
             this.roundPanel1.Controls.Add(this.sensorToggle, 1, 4);
@@ -68,20 +71,23 @@ namespace insulin_pump
             this.roundPanel1.Controls.Add(this.testScenariosHeaderLabel, 0, 0);
             this.roundPanel1.Controls.Add(this.resevoirRemovalLabel, 0, 1);
             this.roundPanel1.Controls.Add(this.resevoirToggle, 1, 1);
-            this.roundPanel1.Controls.Add(this.runTestButton, 0, 7);
+            this.roundPanel1.Controls.Add(this.runTestButton, 9, 7);
+            this.roundPanel1.Controls.Add(this.timeLbl, 0, 7);
             this.roundPanel1.Location = new System.Drawing.Point(34, 26);
             this.roundPanel1.Name = "roundPanel1";
             this.roundPanel1.Radious = 25;
-            this.roundPanel1.RowCount = 9;
-            this.roundPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.roundPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.roundPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.roundPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.roundPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.roundPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.roundPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.roundPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.roundPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.roundPanel1.RowCount = 10;
+            this.roundPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0001F));
+            this.roundPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0001F));
+            this.roundPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0001F));
+            this.roundPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0001F));
+            this.roundPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0001F));
+            this.roundPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0001F));
+            this.roundPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0001F));
+            this.roundPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0001F));
+            this.roundPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0001F));
+            this.roundPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.999102F));
+            this.roundPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.roundPanel1.Size = new System.Drawing.Size(314, 580);
             this.roundPanel1.TabIndex = 0;
             this.roundPanel1.TitleBackColor = System.Drawing.Color.Empty;
@@ -94,7 +100,7 @@ namespace insulin_pump
             this.resetButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.roundPanel1.SetColumnSpan(this.resetButton, 2);
             this.resetButton.Font = new System.Drawing.Font("Century", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resetButton.Location = new System.Drawing.Point(48, 522);
+            this.resetButton.Location = new System.Drawing.Point(48, 527);
             this.resetButton.Name = "resetButton";
             this.resetButton.Size = new System.Drawing.Size(217, 48);
             this.resetButton.TabIndex = 23;
@@ -105,7 +111,7 @@ namespace insulin_pump
             // deliveryToggle
             // 
             this.deliveryToggle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.deliveryToggle.Location = new System.Drawing.Point(206, 400);
+            this.deliveryToggle.Location = new System.Drawing.Point(206, 361);
             this.deliveryToggle.MinimumSize = new System.Drawing.Size(45, 22);
             this.deliveryToggle.Name = "deliveryToggle";
             this.deliveryToggle.OffBackColor = System.Drawing.Color.Gray;
@@ -120,7 +126,7 @@ namespace insulin_pump
             // pumpToggle
             // 
             this.pumpToggle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pumpToggle.Location = new System.Drawing.Point(206, 336);
+            this.pumpToggle.Location = new System.Drawing.Point(206, 303);
             this.pumpToggle.MinimumSize = new System.Drawing.Size(45, 22);
             this.pumpToggle.Name = "pumpToggle";
             this.pumpToggle.OffBackColor = System.Drawing.Color.Gray;
@@ -135,7 +141,7 @@ namespace insulin_pump
             // sensorToggle
             // 
             this.sensorToggle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.sensorToggle.Location = new System.Drawing.Point(206, 272);
+            this.sensorToggle.Location = new System.Drawing.Point(206, 245);
             this.sensorToggle.MinimumSize = new System.Drawing.Size(45, 22);
             this.sensorToggle.Name = "sensorToggle";
             this.sensorToggle.OffBackColor = System.Drawing.Color.Gray;
@@ -150,7 +156,7 @@ namespace insulin_pump
             // batteryToggle
             // 
             this.batteryToggle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.batteryToggle.Location = new System.Drawing.Point(206, 208);
+            this.batteryToggle.Location = new System.Drawing.Point(206, 187);
             this.batteryToggle.MinimumSize = new System.Drawing.Size(45, 22);
             this.batteryToggle.Name = "batteryToggle";
             this.batteryToggle.OffBackColor = System.Drawing.Color.Gray;
@@ -165,7 +171,7 @@ namespace insulin_pump
             // needleToggle
             // 
             this.needleToggle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.needleToggle.Location = new System.Drawing.Point(206, 144);
+            this.needleToggle.Location = new System.Drawing.Point(206, 129);
             this.needleToggle.MinimumSize = new System.Drawing.Size(45, 22);
             this.needleToggle.Name = "needleToggle";
             this.needleToggle.OffBackColor = System.Drawing.Color.Gray;
@@ -184,9 +190,9 @@ namespace insulin_pump
             | System.Windows.Forms.AnchorStyles.Right)));
             this.deliveryFailingLabel.AutoSize = true;
             this.deliveryFailingLabel.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deliveryFailingLabel.Location = new System.Drawing.Point(3, 384);
+            this.deliveryFailingLabel.Location = new System.Drawing.Point(3, 348);
             this.deliveryFailingLabel.Name = "deliveryFailingLabel";
-            this.deliveryFailingLabel.Size = new System.Drawing.Size(168, 64);
+            this.deliveryFailingLabel.Size = new System.Drawing.Size(168, 58);
             this.deliveryFailingLabel.TabIndex = 15;
             this.deliveryFailingLabel.Text = "Failure to Deliver Insulin";
             this.deliveryFailingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -198,9 +204,9 @@ namespace insulin_pump
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pumpFailingLabel.AutoSize = true;
             this.pumpFailingLabel.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pumpFailingLabel.Location = new System.Drawing.Point(3, 320);
+            this.pumpFailingLabel.Location = new System.Drawing.Point(3, 290);
             this.pumpFailingLabel.Name = "pumpFailingLabel";
-            this.pumpFailingLabel.Size = new System.Drawing.Size(168, 64);
+            this.pumpFailingLabel.Size = new System.Drawing.Size(168, 58);
             this.pumpFailingLabel.TabIndex = 14;
             this.pumpFailingLabel.Text = "Insulin Pump Failing";
             this.pumpFailingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -212,9 +218,9 @@ namespace insulin_pump
             | System.Windows.Forms.AnchorStyles.Right)));
             this.sensorFailingLabel.AutoSize = true;
             this.sensorFailingLabel.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sensorFailingLabel.Location = new System.Drawing.Point(3, 256);
+            this.sensorFailingLabel.Location = new System.Drawing.Point(3, 232);
             this.sensorFailingLabel.Name = "sensorFailingLabel";
-            this.sensorFailingLabel.Size = new System.Drawing.Size(168, 64);
+            this.sensorFailingLabel.Size = new System.Drawing.Size(168, 58);
             this.sensorFailingLabel.TabIndex = 13;
             this.sensorFailingLabel.Text = "Sensor Failing";
             this.sensorFailingLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -226,9 +232,9 @@ namespace insulin_pump
             | System.Windows.Forms.AnchorStyles.Right)));
             this.batteryLowLabel.AutoSize = true;
             this.batteryLowLabel.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.batteryLowLabel.Location = new System.Drawing.Point(3, 192);
+            this.batteryLowLabel.Location = new System.Drawing.Point(3, 174);
             this.batteryLowLabel.Name = "batteryLowLabel";
-            this.batteryLowLabel.Size = new System.Drawing.Size(168, 64);
+            this.batteryLowLabel.Size = new System.Drawing.Size(168, 58);
             this.batteryLowLabel.TabIndex = 12;
             this.batteryLowLabel.Text = "Battery Voltage Below 0.5v";
             this.batteryLowLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -240,9 +246,9 @@ namespace insulin_pump
             | System.Windows.Forms.AnchorStyles.Right)));
             this.needleRemovalLabel.AutoSize = true;
             this.needleRemovalLabel.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.needleRemovalLabel.Location = new System.Drawing.Point(3, 128);
+            this.needleRemovalLabel.Location = new System.Drawing.Point(3, 116);
             this.needleRemovalLabel.Name = "needleRemovalLabel";
-            this.needleRemovalLabel.Size = new System.Drawing.Size(168, 64);
+            this.needleRemovalLabel.Size = new System.Drawing.Size(168, 58);
             this.needleRemovalLabel.TabIndex = 11;
             this.needleRemovalLabel.Text = "Removal of the Needle";
             this.needleRemovalLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -257,7 +263,7 @@ namespace insulin_pump
             this.testScenariosHeaderLabel.Font = new System.Drawing.Font("Century", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.testScenariosHeaderLabel.Location = new System.Drawing.Point(3, 0);
             this.testScenariosHeaderLabel.Name = "testScenariosHeaderLabel";
-            this.testScenariosHeaderLabel.Size = new System.Drawing.Size(308, 64);
+            this.testScenariosHeaderLabel.Size = new System.Drawing.Size(308, 58);
             this.testScenariosHeaderLabel.TabIndex = 6;
             this.testScenariosHeaderLabel.Text = "Test Scenarios";
             this.testScenariosHeaderLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -269,9 +275,9 @@ namespace insulin_pump
             | System.Windows.Forms.AnchorStyles.Right)));
             this.resevoirRemovalLabel.AutoSize = true;
             this.resevoirRemovalLabel.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resevoirRemovalLabel.Location = new System.Drawing.Point(3, 64);
+            this.resevoirRemovalLabel.Location = new System.Drawing.Point(3, 58);
             this.resevoirRemovalLabel.Name = "resevoirRemovalLabel";
-            this.resevoirRemovalLabel.Size = new System.Drawing.Size(168, 64);
+            this.resevoirRemovalLabel.Size = new System.Drawing.Size(168, 58);
             this.resevoirRemovalLabel.TabIndex = 10;
             this.resevoirRemovalLabel.Text = "Removal of Insulin Resevoir";
             this.resevoirRemovalLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -279,7 +285,7 @@ namespace insulin_pump
             // resevoirToggle
             // 
             this.resevoirToggle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.resevoirToggle.Location = new System.Drawing.Point(206, 80);
+            this.resevoirToggle.Location = new System.Drawing.Point(206, 71);
             this.resevoirToggle.MinimumSize = new System.Drawing.Size(45, 22);
             this.resevoirToggle.Name = "resevoirToggle";
             this.resevoirToggle.OffBackColor = System.Drawing.Color.Gray;
@@ -296,13 +302,36 @@ namespace insulin_pump
             this.runTestButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.roundPanel1.SetColumnSpan(this.runTestButton, 2);
             this.runTestButton.Font = new System.Drawing.Font("Century", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.runTestButton.Location = new System.Drawing.Point(23, 454);
+            this.runTestButton.Location = new System.Drawing.Point(23, 467);
             this.runTestButton.Name = "runTestButton";
             this.runTestButton.Size = new System.Drawing.Size(268, 51);
             this.runTestButton.TabIndex = 22;
             this.runTestButton.Text = "Run Test Scenarios";
             this.runTestButton.UseVisualStyleBackColor = true;
             this.runTestButton.Click += new System.EventHandler(this.runTestButton_Click);
+            // 
+            // timeLbl
+            // 
+            this.timeLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.timeLbl.AutoSize = true;
+            this.timeLbl.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeLbl.Location = new System.Drawing.Point(3, 406);
+            this.timeLbl.Name = "timeLbl";
+            this.timeLbl.Size = new System.Drawing.Size(168, 58);
+            this.timeLbl.TabIndex = 1;
+            this.timeLbl.Text = "Set Time";
+            this.timeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dateTimePicker1.Checked = false;
+            this.dateTimePicker1.Location = new System.Drawing.Point(177, 425);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(134, 20);
+            this.dateTimePicker1.TabIndex = 1;
             // 
             // TestScenarios
             // 
@@ -339,5 +368,7 @@ namespace insulin_pump
         private RJToggleButton resevoirToggle;
         private loanCalculator.RoundedButton runTestButton;
         private loanCalculator.RoundedButton resetButton;
+        private System.Windows.Forms.Label timeLbl;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

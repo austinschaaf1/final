@@ -15,6 +15,7 @@ namespace insulin_pump
         public Display2()
         {
             InitializeComponent();
+            this.BackColor = ColorTranslator.FromHtml("#11258C"); // set background of form to AAA safe contrast color
             lastDoseTimeLabel.Text = DateTime.Now.ToLocalTime().ToString();
         }
 
