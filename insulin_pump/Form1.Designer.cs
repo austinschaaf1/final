@@ -29,6 +29,7 @@ namespace insulin_pump
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelSide = new System.Windows.Forms.Panel();
             this.roundPanel1 = new loanCalculator.RoundPanel();
             this.resevoirDosesRemainingQNLabel = new System.Windows.Forms.Label();
@@ -37,6 +38,7 @@ namespace insulin_pump
             this.BatterylvlLbl = new System.Windows.Forms.Label();
             this.battryLbl = new System.Windows.Forms.Label();
             this.RemainingDoseslbl = new System.Windows.Forms.Label();
+            this.InsilunWarning = new System.Windows.Forms.Label();
             this.Line = new System.Windows.Forms.Label();
             this.QuickNotificationlbl = new System.Windows.Forms.Label();
             this.timeLbl = new System.Windows.Forms.Label();
@@ -49,7 +51,7 @@ namespace insulin_pump
             this.Helpbtn = new System.Windows.Forms.Button();
             this.settingbtn = new System.Windows.Forms.Button();
             this.mainpanel = new System.Windows.Forms.Panel();
-            this.InsilunWarning = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panelSide.SuspendLayout();
             this.roundPanel1.SuspendLayout();
             this.panelheader.SuspendLayout();
@@ -122,6 +124,7 @@ namespace insulin_pump
             this.resevoirDosesRemainingTextLabel.Size = new System.Drawing.Size(166, 51);
             this.resevoirDosesRemainingTextLabel.TabIndex = 7;
             this.resevoirDosesRemainingTextLabel.Text = "Resevoir Doses\r\nRemaining: ";
+            this.toolTip1.SetToolTip(this.resevoirDosesRemainingTextLabel, "Displays the total amount of doses remaining in resevoir");
             // 
             // remainingDosesQNLabel
             // 
@@ -145,6 +148,7 @@ namespace insulin_pump
             this.BatterylvlLbl.Size = new System.Drawing.Size(163, 29);
             this.BatterylvlLbl.TabIndex = 4;
             this.BatterylvlLbl.Text = "Battery Level: ";
+            this.toolTip1.SetToolTip(this.BatterylvlLbl, "Displays the battery level");
             // 
             // battryLbl
             // 
@@ -167,6 +171,19 @@ namespace insulin_pump
             this.RemainingDoseslbl.Size = new System.Drawing.Size(166, 29);
             this.RemainingDoseslbl.TabIndex = 3;
             this.RemainingDoseslbl.Text = "Remaining Doses: ";
+            this.toolTip1.SetToolTip(this.RemainingDoseslbl, "Displays the total remaining doses");
+            // 
+            // InsilunWarning
+            // 
+            this.InsilunWarning.AutoSize = true;
+            this.InsilunWarning.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InsilunWarning.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.InsilunWarning.Location = new System.Drawing.Point(3, 103);
+            this.InsilunWarning.Name = "InsilunWarning";
+            this.InsilunWarning.Size = new System.Drawing.Size(119, 48);
+            this.InsilunWarning.TabIndex = 9;
+            this.InsilunWarning.Text = "Insilun Level Acceptable";
+            this.toolTip1.SetToolTip(this.InsilunWarning, "Displays text if insilun is too high, low, or it is acceptable");
             // 
             // Line
             // 
@@ -247,6 +264,7 @@ namespace insulin_pump
             this.testScenariosButton.Size = new System.Drawing.Size(219, 38);
             this.testScenariosButton.TabIndex = 4;
             this.testScenariosButton.Text = "Test Scenarios";
+            this.toolTip1.SetToolTip(this.testScenariosButton, "Click to open Test Scenarios");
             this.testScenariosButton.UseVisualStyleBackColor = false;
             this.testScenariosButton.Click += new System.EventHandler(this.button1_Click_1);
             // 
@@ -262,6 +280,7 @@ namespace insulin_pump
             this.btn_display_1.Size = new System.Drawing.Size(218, 38);
             this.btn_display_1.TabIndex = 0;
             this.btn_display_1.Text = "Messages";
+            this.toolTip1.SetToolTip(this.btn_display_1, "Click to display important system information");
             this.btn_display_1.UseVisualStyleBackColor = false;
             this.btn_display_1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -277,6 +296,7 @@ namespace insulin_pump
             this.btn_display_2.Size = new System.Drawing.Size(219, 38);
             this.btn_display_2.TabIndex = 1;
             this.btn_display_2.Text = "Administer Insulin";
+            this.toolTip1.SetToolTip(this.btn_display_2, "Click to either administer insulin, monitor insulin, or change operation modes");
             this.btn_display_2.UseVisualStyleBackColor = false;
             this.btn_display_2.Click += new System.EventHandler(this.btn_display_2_Click);
             // 
@@ -292,6 +312,7 @@ namespace insulin_pump
             this.btn_clock.Size = new System.Drawing.Size(219, 38);
             this.btn_clock.TabIndex = 2;
             this.btn_clock.Text = "Clock";
+            this.toolTip1.SetToolTip(this.btn_clock, "Click to display the remaining amount of time until the insulin doses reset ");
             this.btn_clock.UseVisualStyleBackColor = false;
             this.btn_clock.Click += new System.EventHandler(this.btn_clock_Click);
             // 
@@ -307,6 +328,7 @@ namespace insulin_pump
             this.Helpbtn.Size = new System.Drawing.Size(140, 38);
             this.Helpbtn.TabIndex = 5;
             this.Helpbtn.Text = "Help";
+            this.toolTip1.SetToolTip(this.Helpbtn, "Click to open help page for the specific page you are on");
             this.Helpbtn.UseVisualStyleBackColor = false;
             this.Helpbtn.Click += new System.EventHandler(this.Helpbtn_Click);
             // 
@@ -322,6 +344,7 @@ namespace insulin_pump
             this.settingbtn.Size = new System.Drawing.Size(128, 38);
             this.settingbtn.TabIndex = 6;
             this.settingbtn.Text = "Settings";
+            this.toolTip1.SetToolTip(this.settingbtn, "Click to open settings page");
             this.settingbtn.UseVisualStyleBackColor = false;
             this.settingbtn.Click += new System.EventHandler(this.settingbtn_Click);
             // 
@@ -333,17 +356,6 @@ namespace insulin_pump
             this.mainpanel.Size = new System.Drawing.Size(929, 527);
             this.mainpanel.TabIndex = 2;
             this.mainpanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainpanel_Paint);
-            // 
-            // InsilunWarning
-            // 
-            this.InsilunWarning.AutoSize = true;
-            this.InsilunWarning.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InsilunWarning.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.InsilunWarning.Location = new System.Drawing.Point(3, 103);
-            this.InsilunWarning.Name = "InsilunWarning";
-            this.InsilunWarning.Size = new System.Drawing.Size(119, 48);
-            this.InsilunWarning.TabIndex = 9;
-            this.InsilunWarning.Text = "Insilun Level Acceptable";
             // 
             // Form1
             // 
@@ -391,6 +403,7 @@ namespace insulin_pump
         private System.Windows.Forms.Label resevoirDosesRemainingQNLabel;
         private System.Windows.Forms.Label resevoirDosesRemainingTextLabel;
         private System.Windows.Forms.Label InsilunWarning;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 
