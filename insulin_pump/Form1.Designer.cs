@@ -31,8 +31,6 @@ namespace insulin_pump
         {
             this.panelSide = new System.Windows.Forms.Panel();
             this.Line = new System.Windows.Forms.Label();
-            this.BatterylvlLbl = new System.Windows.Forms.Label();
-            this.RemainingDoseslbl = new System.Windows.Forms.Label();
             this.QuickNotificationlbl = new System.Windows.Forms.Label();
             this.timeLbl = new System.Windows.Forms.Label();
             this.panelheader = new System.Windows.Forms.Panel();
@@ -44,19 +42,24 @@ namespace insulin_pump
             this.Helpbtn = new System.Windows.Forms.Button();
             this.settingbtn = new System.Windows.Forms.Button();
             this.mainpanel = new System.Windows.Forms.Panel();
+            this.roundPanel1 = new loanCalculator.RoundPanel();
+            this.remainingDosesQNLabel = new System.Windows.Forms.Label();
+            this.BatterylvlLbl = new System.Windows.Forms.Label();
             this.battryLbl = new System.Windows.Forms.Label();
+            this.RemainingDoseslbl = new System.Windows.Forms.Label();
+            this.resevoirDosesRemainingTextLabel = new System.Windows.Forms.Label();
+            this.resevoirDosesRemainingQNLabel = new System.Windows.Forms.Label();
             this.panelSide.SuspendLayout();
             this.panelheader.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.roundPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelSide
             // 
             this.panelSide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(76)))), ((int)(((byte)(217)))));
-            this.panelSide.Controls.Add(this.battryLbl);
+            this.panelSide.Controls.Add(this.roundPanel1);
             this.panelSide.Controls.Add(this.Line);
-            this.panelSide.Controls.Add(this.BatterylvlLbl);
-            this.panelSide.Controls.Add(this.RemainingDoseslbl);
             this.panelSide.Controls.Add(this.QuickNotificationlbl);
             this.panelSide.Controls.Add(this.timeLbl);
             this.panelSide.Dock = System.Windows.Forms.DockStyle.Left;
@@ -76,28 +79,6 @@ namespace insulin_pump
             this.Line.Size = new System.Drawing.Size(253, 13);
             this.Line.TabIndex = 5;
             this.Line.Text = "_________________________________________";
-            // 
-            // BatterylvlLbl
-            // 
-            this.BatterylvlLbl.AutoSize = true;
-            this.BatterylvlLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BatterylvlLbl.ForeColor = System.Drawing.Color.White;
-            this.BatterylvlLbl.Location = new System.Drawing.Point(12, 489);
-            this.BatterylvlLbl.Name = "BatterylvlLbl";
-            this.BatterylvlLbl.Size = new System.Drawing.Size(163, 29);
-            this.BatterylvlLbl.TabIndex = 4;
-            this.BatterylvlLbl.Text = "Battery Level: ";
-            // 
-            // RemainingDoseslbl
-            // 
-            this.RemainingDoseslbl.AutoSize = true;
-            this.RemainingDoseslbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RemainingDoseslbl.ForeColor = System.Drawing.Color.White;
-            this.RemainingDoseslbl.Location = new System.Drawing.Point(8, 58);
-            this.RemainingDoseslbl.Name = "RemainingDoseslbl";
-            this.RemainingDoseslbl.Size = new System.Drawing.Size(216, 29);
-            this.RemainingDoseslbl.TabIndex = 3;
-            this.RemainingDoseslbl.Text = "Remaining Doses: ";
             // 
             // QuickNotificationlbl
             // 
@@ -254,16 +235,102 @@ namespace insulin_pump
             this.mainpanel.TabIndex = 2;
             this.mainpanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainpanel_Paint);
             // 
+            // roundPanel1
+            // 
+            this.roundPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.roundPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.roundPanel1.ColumnCount = 2;
+            this.roundPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.66116F));
+            this.roundPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.33884F));
+            this.roundPanel1.Controls.Add(this.resevoirDosesRemainingQNLabel, 1, 1);
+            this.roundPanel1.Controls.Add(this.resevoirDosesRemainingTextLabel, 0, 1);
+            this.roundPanel1.Controls.Add(this.remainingDosesQNLabel, 1, 0);
+            this.roundPanel1.Controls.Add(this.BatterylvlLbl, 0, 3);
+            this.roundPanel1.Controls.Add(this.battryLbl, 1, 3);
+            this.roundPanel1.Controls.Add(this.RemainingDoseslbl, 0, 0);
+            this.roundPanel1.Location = new System.Drawing.Point(3, 63);
+            this.roundPanel1.Name = "roundPanel1";
+            this.roundPanel1.Radious = 25;
+            this.roundPanel1.RowCount = 4;
+            this.roundPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.13689F));
+            this.roundPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.roundPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.86311F));
+            this.roundPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.roundPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.roundPanel1.Size = new System.Drawing.Size(250, 452);
+            this.roundPanel1.TabIndex = 7;
+            this.roundPanel1.TitleBackColor = System.Drawing.Color.Empty;
+            this.roundPanel1.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 16.25F, System.Drawing.FontStyle.Bold);
+            this.roundPanel1.TitleForeColor = System.Drawing.Color.Empty;
+            this.roundPanel1.TitleHatchStyle = System.Drawing.Drawing2D.HatchStyle.Horizontal;
+            // 
+            // remainingDosesQNLabel
+            // 
+            this.remainingDosesQNLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.remainingDosesQNLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.remainingDosesQNLabel.ForeColor = System.Drawing.Color.White;
+            this.remainingDosesQNLabel.Location = new System.Drawing.Point(181, 4);
+            this.remainingDosesQNLabel.Name = "remainingDosesQNLabel";
+            this.remainingDosesQNLabel.Size = new System.Drawing.Size(64, 29);
+            this.remainingDosesQNLabel.TabIndex = 4;
+            this.remainingDosesQNLabel.Text = "##";
+            this.remainingDosesQNLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // BatterylvlLbl
+            // 
+            this.BatterylvlLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BatterylvlLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BatterylvlLbl.ForeColor = System.Drawing.Color.White;
+            this.BatterylvlLbl.Location = new System.Drawing.Point(6, 418);
+            this.BatterylvlLbl.Name = "BatterylvlLbl";
+            this.BatterylvlLbl.Size = new System.Drawing.Size(163, 29);
+            this.BatterylvlLbl.TabIndex = 4;
+            this.BatterylvlLbl.Text = "Battery Level: ";
+            // 
             // battryLbl
             // 
-            this.battryLbl.AutoSize = true;
+            this.battryLbl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.battryLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.battryLbl.ForeColor = System.Drawing.Color.White;
-            this.battryLbl.Location = new System.Drawing.Point(172, 489);
+            this.battryLbl.Location = new System.Drawing.Point(182, 418);
             this.battryLbl.Name = "battryLbl";
             this.battryLbl.Size = new System.Drawing.Size(61, 29);
             this.battryLbl.TabIndex = 6;
             this.battryLbl.Text = "65%";
+            // 
+            // RemainingDoseslbl
+            // 
+            this.RemainingDoseslbl.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.RemainingDoseslbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RemainingDoseslbl.ForeColor = System.Drawing.Color.White;
+            this.RemainingDoseslbl.Location = new System.Drawing.Point(5, 4);
+            this.RemainingDoseslbl.Name = "RemainingDoseslbl";
+            this.RemainingDoseslbl.Size = new System.Drawing.Size(166, 29);
+            this.RemainingDoseslbl.TabIndex = 3;
+            this.RemainingDoseslbl.Text = "Remaining Doses: ";
+            // 
+            // resevoirDosesRemainingTextLabel
+            // 
+            this.resevoirDosesRemainingTextLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.resevoirDosesRemainingTextLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resevoirDosesRemainingTextLabel.ForeColor = System.Drawing.Color.White;
+            this.resevoirDosesRemainingTextLabel.Location = new System.Drawing.Point(5, 45);
+            this.resevoirDosesRemainingTextLabel.Name = "resevoirDosesRemainingTextLabel";
+            this.resevoirDosesRemainingTextLabel.Size = new System.Drawing.Size(166, 51);
+            this.resevoirDosesRemainingTextLabel.TabIndex = 7;
+            this.resevoirDosesRemainingTextLabel.Text = "Resevoir Doses\r\nRemaining: ";
+            // 
+            // resevoirDosesRemainingQNLabel
+            // 
+            this.resevoirDosesRemainingQNLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.resevoirDosesRemainingQNLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resevoirDosesRemainingQNLabel.ForeColor = System.Drawing.Color.White;
+            this.resevoirDosesRemainingQNLabel.Location = new System.Drawing.Point(181, 56);
+            this.resevoirDosesRemainingQNLabel.Name = "resevoirDosesRemainingQNLabel";
+            this.resevoirDosesRemainingQNLabel.Size = new System.Drawing.Size(64, 29);
+            this.resevoirDosesRemainingQNLabel.TabIndex = 8;
+            this.resevoirDosesRemainingQNLabel.Text = "##";
+            this.resevoirDosesRemainingQNLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
@@ -282,6 +349,7 @@ namespace insulin_pump
             this.panelSide.PerformLayout();
             this.panelheader.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.roundPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -304,6 +372,10 @@ namespace insulin_pump
         private System.Windows.Forms.Button Helpbtn;
         private System.Windows.Forms.Button settingbtn;
         private System.Windows.Forms.Label battryLbl;
+        private loanCalculator.RoundPanel roundPanel1;
+        private System.Windows.Forms.Label remainingDosesQNLabel;
+        private System.Windows.Forms.Label resevoirDosesRemainingQNLabel;
+        private System.Windows.Forms.Label resevoirDosesRemainingTextLabel;
     }
 }
 

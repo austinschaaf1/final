@@ -15,6 +15,7 @@ namespace insulin_pump
     {
         
         public Display1 display1 = new Display1();
+        public Display2 display2 = new Display2();
         public Int32 isClockOpen = 0;
         public Int32 whatIsOpen = 0;//0=display1 1= display2  2 = clock 3= help 4 = settings
         public Int32 isHelpOpen = 0;
@@ -58,6 +59,11 @@ namespace insulin_pump
             settingbtn.BackColor = ColorTranslator.FromHtml("#4D8C18"); // set help color to AA safe color
             settingbtn.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // Set text to safe color
 
+            display2.generateChartPoints(timeLbl.Text);
+            remainingDosesQNLabel.Text = display2.getInsulinDosesAmount();
+            resevoirDosesRemainingQNLabel.Text = display2.getResevoirRemainingAmount();
+
+
 
             whatIsOpen = 0;//display 1 is open
             isSettingsOpen = 0;
@@ -66,6 +72,12 @@ namespace insulin_pump
             timer1.Elapsed += Time_changed;
             timer1.Start();
             loadform(display1);
+        }
+
+        public void setQNLabels()
+        {
+            remainingDosesQNLabel.Text = display2.getRemainingDosesQN();
+            resevoirDosesRemainingQNLabel.Text = display2.getRemaningResevoirQN();
         }
 
         public void loadform(object Form) {
@@ -111,6 +123,12 @@ namespace insulin_pump
 
                     String newTime = $"{hours}:{minutes}:{seconds}";
                     timeLbl.Text = newTime;
+
+                    if (timeLbl.Text == "23:59:59")
+                    {
+                        display2.setRemainingDosesMax();
+                    }
+
                 });
             }
             catch { }
@@ -122,6 +140,7 @@ namespace insulin_pump
         public void timeUpdateTestS(String messageText)
         {
             timeLbl.Text = messageText;
+            display2.generateChartPoints(messageText);
             if (isClockOpen == 1)
             {
                 loadform(new Clock(messageText));
@@ -173,7 +192,7 @@ namespace insulin_pump
             btn_clock.BackColor = ColorTranslator.FromHtml("#4D8C18"); // set Clock color to AA safe color
             btn_clock.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // Set text to safe color
             btn_clock.Font = new Font("Century Gothic", 12, FontStyle.Bold);
-            loadform(new Display2());
+            loadform(display2);
             isClockOpen = 0;
             whatIsOpen = 1; //display2 is open
             isHelpOpen = 0;//clicking this will close help page
