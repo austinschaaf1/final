@@ -52,6 +52,12 @@ namespace insulin_pump
             deliveryLight.Image = insulin_pump.Properties.Resources.red;
         }
 
+        public void insulinLevelUpdate(String messageText)
+        {
+            insulinSystemLabel.Text = messageText;
+            insulinLevelLight.Image = Properties.Resources.red;
+        }
+
         public void resevoirReset()
         {
             resevoirSystemLabel.Text = "Status OK!";
@@ -85,6 +91,11 @@ namespace insulin_pump
             deliveryLight.Image = insulin_pump.Properties.Resources.green;
         }
 
+        public void insulinLevelsReset()
+        {
+            insulinSystemLabel.Text = "Status OK!";
+            insulinLevelLight.Image = Properties.Resources.green;
+        }
     
 
 

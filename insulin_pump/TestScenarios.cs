@@ -19,7 +19,7 @@ namespace insulin_pump
         int sensorFailure = 0;
         int pumpFailure = 0;
         int deliveryFailing = 0;
-        Display1 display1 = new Display1();
+
 
         Form1 mainForm;
 
@@ -31,6 +31,14 @@ namespace insulin_pump
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "HH':'mm':'ss";
             dateTimePicker1.ShowUpDown = true;
+            this.BackColor = ColorTranslator.FromHtml("#304CD9");
+            resetButton.BackColor = ColorTranslator.FromHtml("#4D8C18"); // set test senarios color to AA safe color
+            resetButton.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // Test start out white color
+            runTestButton.BackColor = ColorTranslator.FromHtml("#4D8C18"); // set test senarios color to AA safe color
+            runTestButton.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // Test start out white color
+
+            insulinLevelsNumBox.Controls.RemoveAt(0);
+            insulinLevelsNumBox.Value = decimal.Parse(mainForm.display2.getInsulinLevelAmount());
 
 
         }
@@ -45,27 +53,21 @@ namespace insulin_pump
 
         private void runTestButton_Click(object sender, EventArgs e)
         {
-            //Display1.ActiveForm.Invoke(new MethodInvoker(delegate ()
-            //{
-
-            //Display1.ActiveForm.Invoke(new Action(() => display1.resevoirUpdate("The user has removed the insulin resevoir")));
-
-            //{
-
-            //if(Application.OpenForms.OfType<Form1>().Any())
-            //{
-            //    if (resevoirRemoval == 1)
-            //    {
-            //        var display1 = new Display1();
-            //        display1.resevoirUpdate("The user has removed the insulin resevoir");
-            //        form1.loadform(display1);
-
-            //    }
-            //}
 
 
+            if (setTimeCheckBox.Checked == true)
+            {
+                mainForm.timeUpdateTestS(dateTimePicker1.Text);
+                mainForm.display2.setInsulinLevelAmount(insulinLevelsNumBox.Value);
+                mainForm.setQNLabels();
+            }
 
-            mainForm.timeUpdateTestS(dateTimePicker1.Text);
+            if (insulinLevelsToggle.Checked == true)
+            {
+                mainForm.display2.setInsulinLevelAmount(insulinLevelsNumBox.Value);
+                mainForm.display2.setLastChartPoint(insulinLevelsNumBox.Value);
+                mainForm.setQNLabels();
+            }
 
             if (resevoirRemoval == 1)
             {
@@ -129,9 +131,17 @@ namespace insulin_pump
                 mainForm.display1.deliveryReset();
             }
 
+            if (lowInsulinLevelToggle.Checked == true)
+            {
+                mainForm.display1.insulinLevelUpdate("The level of insulin is low. Change resevoir");
+            }
 
-            //display1.Refresh();
-            //form1.Show();
+            if (lowInsulinLevelToggle.Checked == false)
+            {
+                mainForm.display1.insulinLevelsReset();
+            }
+
+
 
         
 
@@ -236,6 +246,9 @@ namespace insulin_pump
             sensorToggle.Checked = false;
             pumpToggle.Checked = false;
             deliveryToggle.Checked = false;
+            setTimeCheckBox.Checked = false;
+            insulinLevelsToggle.Checked = false;
+            lowInsulinLevelToggle.Checked = false;
             mainForm.display1.resevoirReset();
             mainForm.display1.needleReset();
             mainForm.display1.batteryReset();
@@ -243,6 +256,39 @@ namespace insulin_pump
             mainForm.display1.pumpReset();
             mainForm.display1.deliveryReset();
                
+        }
+
+        private void setTimeCheckBox_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (setTimeCheckBox.Checked == true)
+            {
+                dateTimePicker1.Enabled = true;
+            }
+
+            if (setTimeCheckBox.Checked == false)
+            {
+                dateTimePicker1.Enabled = false;
+            }
+        }
+
+        private void insulinLevelsToggle_CheckedChanged(object sender, EventArgs e)
+        {
+            if(insulinLevelsToggle.Checked == true)
+            {
+                insulinLevelsNumBox.Enabled = true;
+            }
+
+            if(insulinLevelsToggle.Checked == false)
+            {
+                insulinLevelsNumBox.Enabled = false;
+            }
+
+
+        }
+
+        private void lowInsulinLevelToggle_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
