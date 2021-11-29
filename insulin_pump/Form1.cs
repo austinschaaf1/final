@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Timers;
+using System.IO;
 
 namespace insulin_pump
 {
@@ -20,6 +21,7 @@ namespace insulin_pump
         public Int32 whatIsOpen = 0;//0=display1 1= display2  2 = clock 3= help 4 = settings
         public Int32 isHelpOpen = 0;
         public Int32 isSettingsOpen = 0;
+        public Int32 insulinAlarm = 0; // 0== normal 1 == low 2 == high
         public Form1()
         {
             InitializeComponent();
@@ -37,6 +39,8 @@ namespace insulin_pump
             Line.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // set line color to AA safe color
             RemainingDoseslbl.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // set remaining color to AA safe color
             BatterylvlLbl.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // set battery level color to AA safe color
+            InsilunWarning.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // set battery level color to AA safe color
+
             testScenariosButton.BackColor = ColorTranslator.FromHtml("#4D8C18"); // set test senarios color to AA safe color
             testScenariosButton.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // Test start out white color
             battryLbl.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // set battry color to AA safe color
@@ -98,6 +102,8 @@ namespace insulin_pump
             {
                 timeLbl.Invoke((MethodInvoker)delegate
                 {
+                    remainingDosesQNLabel.Text = display2.getRemainingDosesQN();
+                    resevoirDosesRemainingQNLabel.Text = display2.getRemaningResevoirQN();
                     String time = timeLbl.Text;//get unedited time
                     Int32 count = 3;//amount to break apart the string
                     String[] timeParts = time.Split(':', (char)count, (char)StringSplitOptions.RemoveEmptyEntries);//broken apart string
@@ -124,9 +130,44 @@ namespace insulin_pump
                     String newTime = $"{hours}:{minutes}:{seconds}";
                     timeLbl.Text = newTime;
 
-                    if (timeLbl.Text == "23:59:59")
+                    string insulin_level = display2.getInsulinLevelAmount();
+                    if (float.Parse(insulin_level) < 70 && insulinAlarm != 1)
+                    {
+                        InsilunWarning.Text = "Insulin Level Low Alarm!";
+                        InsilunWarning.ForeColor = ColorTranslator.FromHtml("#71D91A"); // set insulin warning level color to AA safe color
+                        string sCurrentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                        string sFile = System.IO.Path.Combine(sCurrentDirectory, @"..\..\..\insulin_pump\Resorses\levelLow.wav");
+                        string sFilePath = Path.GetFullPath(sFile);
+                        System.Media.SoundPlayer player = new System.Media.SoundPlayer(sFilePath);
+                        player.Play();
+                        insulinAlarm = 1;
+                    }
+                    else if (float.Parse(insulin_level) > 160 && insulinAlarm != 2)
+                    {
+                        InsilunWarning.Text = "Insulin Level high Alarm!";
+                        InsilunWarning.ForeColor = ColorTranslator.FromHtml("#71D91A"); // set insulin warning level color to AA safe color
+                        string sCurrentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+                        string sFile = System.IO.Path.Combine(sCurrentDirectory, @"..\..\..\insulin_pump\Resorses\LevelHigh.wav");
+                        string sFilePath = Path.GetFullPath(sFile);
+                        System.Media.SoundPlayer player = new System.Media.SoundPlayer(sFilePath);
+                        player.Play();
+                        insulinAlarm = 2;
+                    }
+                    else if (float.Parse(insulin_level) <= 160 && float.Parse(insulin_level) >= 70 && insulinAlarm != 0) {
+                        InsilunWarning.Text = "Insulin Level Acceptable";
+                        insulinAlarm = 0;
+                        InsilunWarning.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // set insulin warning level color to AA safe color
+                    }
+                    
+
+                        if (timeLbl.Text == "23:59:59")
                     {
                         display2.setRemainingDosesMax();
+                    }
+                    if ((minutes == 00 && seconds == 00) || (minutes == 10 && seconds == 00) || (minutes == 20 && seconds == 00) || (minutes == 30 && seconds == 00) || (minutes == 40 && seconds == 00) || (minutes == 50 && seconds == 00)) {
+                        display2.autoModeCheck();
+
+
                     }
 
                 });

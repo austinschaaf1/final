@@ -14,7 +14,7 @@ namespace insulin_pump
     {
         //Form1 mainForm;
         int counter;
-
+        Int32 autoM = 0;
         public Display2()
         {
             InitializeComponent();
@@ -25,8 +25,16 @@ namespace insulin_pump
             administerInsulinButton.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // Test start out white color
             runAutoButton.BackColor = ColorTranslator.FromHtml("#4D8C18"); // set test senarios color to AA safe color
             runAutoButton.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // Test start out white color
-            runManualButton.BackColor = ColorTranslator.FromHtml("#4D8C18"); // set test senarios color to AA safe color
-            runManualButton.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // Test start out white color
+            runAutoButton.Font = new Font("Century Gothic", 12, FontStyle.Bold);
+
+            runManualButton.BackColor = ColorTranslator.FromHtml("#71D91A"); // set test senarios color to AA safe color
+            runManualButton.ForeColor = ColorTranslator.FromHtml("#000000"); // Test start out white color
+            runManualButton.Font = new Font("Century Gothic", 14, FontStyle.Bold);
+
+            offBtn.BackColor = ColorTranslator.FromHtml("#4D8C18"); // set test senarios color to AA safe color
+            offBtn.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // Test start out white color
+            offBtn.Font = new Font("Century Gothic", 12, FontStyle.Bold);
+            
 
 
         }
@@ -135,6 +143,19 @@ namespace insulin_pump
             administerErrorLabel.Visible = false;
         }
 
+        public void autoModeCheck() {
+            if (float.Parse(insulinLevelAmountLabel.Text) >= 160 && int.Parse(remainingDosesAmountLabel.Text) > 0 && autoM == 1)
+            {
+                insulinLevelAmountLabel.Text = (float.Parse(insulinLevelAmountLabel.Text) - 50).ToString();
+                remainingDosesAmountLabel.Text = (int.Parse(remainingDosesAmountLabel.Text) - 1).ToString();
+                resevoirRemainingAmountLabel.Text = (int.Parse(resevoirRemainingAmountLabel.Text) - 1).ToString();
+                insulinDosingChart.Series[0].Points[counter].YValues[0] = int.Parse(insulinLevelAmountLabel.Text);
+                insulinDosingChart.Refresh();
+                return;
+
+            }
+        }
+
         private void Display2_Load(object sender, EventArgs e)
         {
             
@@ -159,9 +180,9 @@ namespace insulin_pump
             
 
             administerErrorLabel.Visible = false;
-            if (int.Parse(insulinLevelAmountLabel.Text) >= 160 && int.Parse(remainingDosesAmountLabel.Text) >0)
+            if (float.Parse(insulinLevelAmountLabel.Text) >= 160 && int.Parse(remainingDosesAmountLabel.Text) >0)
             {
-                insulinLevelAmountLabel.Text = (int.Parse(insulinLevelAmountLabel.Text) - 50).ToString();
+                insulinLevelAmountLabel.Text = (float .Parse(insulinLevelAmountLabel.Text) - 50).ToString();
                 remainingDosesAmountLabel.Text = (int.Parse(remainingDosesAmountLabel.Text)-1).ToString();
                 resevoirRemainingAmountLabel.Text = (int.Parse(resevoirRemainingAmountLabel.Text)-1).ToString();
                 insulinDosingChart.Series[0].Points[counter].YValues[0] = int.Parse(insulinLevelAmountLabel.Text);
@@ -179,6 +200,60 @@ namespace insulin_pump
 
             
 
+        }
+
+        private void offBtn_Click(object sender, EventArgs e)
+        {
+            administerInsulinButton.Enabled = false;
+
+            runAutoButton.BackColor = ColorTranslator.FromHtml("#4D8C18"); // set test senarios color to AA safe color
+            runAutoButton.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // Test start out white color
+            runAutoButton.Font = new Font("Century Gothic", 12, FontStyle.Bold);
+
+            runManualButton.BackColor = ColorTranslator.FromHtml("#4D8C18"); // set test senarios color to AA safe color
+            runManualButton.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // Test start out white color
+            runManualButton.Font = new Font("Century Gothic", 12, FontStyle.Bold);
+
+            offBtn.BackColor = ColorTranslator.FromHtml("#71D91A"); // set test senarios color to AA safe color
+            offBtn.ForeColor = ColorTranslator.FromHtml("#000000"); // Test start out white color
+            offBtn.Font = new Font("Century Gothic", 14, FontStyle.Bold);
+            autoM = 0;
+        }
+
+        private void runManualButton_Click(object sender, EventArgs e)
+        {
+            administerInsulinButton.Enabled = true;
+
+            runAutoButton.BackColor = ColorTranslator.FromHtml("#4D8C18"); // set test senarios color to AA safe color
+            runAutoButton.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // Test start out white color
+            runAutoButton.Font = new Font("Century Gothic", 12, FontStyle.Bold);
+
+            runManualButton.BackColor = ColorTranslator.FromHtml("#71D91A"); // set test senarios color to AA safe color
+            runManualButton.ForeColor = ColorTranslator.FromHtml("#000000"); // Test start out white color
+            runManualButton.Font = new Font("Century Gothic", 14, FontStyle.Bold);
+
+            offBtn.BackColor = ColorTranslator.FromHtml("#4D8C18"); // set test senarios color to AA safe color
+            offBtn.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // Test start out white color
+            offBtn.Font = new Font("Century Gothic", 12, FontStyle.Bold);
+            autoM = 0;
+        }
+
+        private void runAutoButton_Click(object sender, EventArgs e)
+        {
+            administerInsulinButton.Enabled = false;
+
+            runAutoButton.BackColor = ColorTranslator.FromHtml("#71D91A"); // set test senarios color to AA safe color
+            runAutoButton.ForeColor = ColorTranslator.FromHtml("#000000"); // Test start out white color
+            runAutoButton.Font = new Font("Century Gothic", 14, FontStyle.Bold);
+
+            runManualButton.BackColor = ColorTranslator.FromHtml("#4D8C18"); // set test senarios color to AA safe color
+            runManualButton.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // Test start out white color
+            runManualButton.Font = new Font("Century Gothic", 12, FontStyle.Bold);
+
+            offBtn.BackColor = ColorTranslator.FromHtml("#4D8C18"); // set test senarios color to AA safe color
+            offBtn.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // Test start out white color
+            offBtn.Font = new Font("Century Gothic", 12, FontStyle.Bold);
+            autoM = 1;
         }
     }
 }
