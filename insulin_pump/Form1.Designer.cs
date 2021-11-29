@@ -216,7 +216,7 @@ namespace insulin_pump
             this.timeLbl.Name = "timeLbl";
             this.timeLbl.Size = new System.Drawing.Size(103, 29);
             this.timeLbl.TabIndex = 0;
-            this.timeLbl.Text = "20:59:56";
+            this.timeLbl.Text = "00:00:00";
             // 
             // panelheader
             // 

@@ -65,6 +65,7 @@ namespace insulin_pump
                     hours = 0;
                 }
 
+         
 
                 String newTime = $"{hours}:{minutes}:{seconds}";
                 Clock1.Value = percentage;

@@ -22,6 +22,7 @@ namespace insulin_pump
         public Int32 isHelpOpen = 0;
         public Int32 isSettingsOpen = 0;
         public Int32 insulinAlarm = 0; // 0== normal 1 == low 2 == high
+        
         public Form1()
         {
             InitializeComponent();
@@ -32,6 +33,11 @@ namespace insulin_pump
             // AA friendly text color light blue 30% #F0EBE6
             // seldom use action color green 10% #71D91A
             //Safe color for action green 10% black
+            
+            DateTime dt = DateTime.Now;
+            dt.ToString("HH:mm:ss");
+            timeLbl.Text = dt.ToString("HH:mm:ss");
+
 
             panelSide.BackColor = ColorTranslator.FromHtml("#304CD9"); // set background of left pannel to AA safe contrast color
             panelheader.BackColor = ColorTranslator.FromHtml("#304CD9"); // set background of top pannel to AA safe contrast color
