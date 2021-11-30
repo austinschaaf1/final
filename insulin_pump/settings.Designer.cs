@@ -29,6 +29,7 @@ namespace insulin_pump
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.hdrLbl = new System.Windows.Forms.Label();
             this.rjToggleButton1 = new insulin_pump.RJToggleButton();
             this.rjToggleButton2 = new insulin_pump.RJToggleButton();
@@ -40,6 +41,7 @@ namespace insulin_pump
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.Closebtn = new System.Windows.Forms.Button();
             this.popup = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // hdrLbl
@@ -105,6 +107,7 @@ namespace insulin_pump
             this.boldLbl.Size = new System.Drawing.Size(144, 25);
             this.boldLbl.TabIndex = 5;
             this.boldLbl.Text = "Bold all Text";
+            this.toolTip1.SetToolTip(this.boldLbl, "This will bold all text in the system");
             // 
             // label1
             // 
@@ -116,6 +119,7 @@ namespace insulin_pump
             this.label1.Size = new System.Drawing.Size(204, 25);
             this.label1.TabIndex = 6;
             this.label1.Text = "Change Language";
+            this.toolTip1.SetToolTip(this.label1, "choose a language to select");
             // 
             // label2
             // 
@@ -127,6 +131,7 @@ namespace insulin_pump
             this.label2.Size = new System.Drawing.Size(208, 25);
             this.label2.TabIndex = 7;
             this.label2.Text = "Increase Text Size";
+            this.toolTip1.SetToolTip(this.label2, "Increases text size through the system");
             // 
             // label3
             // 
@@ -138,6 +143,7 @@ namespace insulin_pump
             this.label3.Size = new System.Drawing.Size(128, 25);
             this.label3.TabIndex = 8;
             this.label3.Text = "Voice Over";
+            this.toolTip1.SetToolTip(this.label3, "Enables voice over for system information");
             // 
             // comboBox1
             // 
@@ -222,5 +228,6 @@ namespace insulin_pump
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button Closebtn;
         private System.Windows.Forms.Label popup;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

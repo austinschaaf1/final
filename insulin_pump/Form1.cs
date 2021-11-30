@@ -117,6 +117,10 @@ namespace insulin_pump
                     Int32 seconds = int.Parse(timeParts[2]) + 1;
                     Int32 minutes = int.Parse(timeParts[1]);
                     Int32 hours = int.Parse(timeParts[0]);
+                    String minutesString = "";
+                    String secondsString = "";
+                    String hoursString = "";
+
                     if (seconds == 60)
                     {
                         seconds = 0;
@@ -131,9 +135,26 @@ namespace insulin_pump
                     {
                         hours = 0;
                     }
+                    minutesString = minutes.ToString();
+                    secondsString = seconds.ToString();
+                    hoursString = hours.ToString();
+                    if (hours < 10)
+                    {
+                        hoursString = "0" + hoursString;
+                    }
+                    if (seconds < 10)
+                    {
+                        secondsString = "0" + secondsString;
+                    }
+                    if (minutes < 10)
+                    {
+                        minutesString = "0" + minutesString;
+                    }
 
 
-                    String newTime = $"{hours}:{minutes}:{seconds}";
+                    String newTime = $"{hoursString}:{minutesString}:{secondsString}";
+
+                   
                     timeLbl.Text = newTime;
 
                     string insulin_level = display2.getInsulinLevelAmount();
