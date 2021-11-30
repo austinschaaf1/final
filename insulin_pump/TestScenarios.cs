@@ -69,6 +69,11 @@ namespace insulin_pump
                 mainForm.setQNLabels();
             }
 
+            if(resevoirRefillToggle.Checked == true)
+            {
+                mainForm.display2.resevoirRefill();
+            }
+
             if (resevoirRemoval == 1)
             {
                 
@@ -287,6 +292,11 @@ namespace insulin_pump
         }
 
         private void lowInsulinLevelToggle_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void resevoirRefillToggle_CheckedChanged(object sender, EventArgs e)
         {
 
         }
