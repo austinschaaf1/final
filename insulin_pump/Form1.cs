@@ -160,7 +160,7 @@ namespace insulin_pump
                     string insulin_level = display2.getInsulinLevelAmount();
                     if (float.Parse(insulin_level) < 70 && insulinAlarm != 1)
                     {
-                        InsilunWarning.Text = "Insulin Level Low Alarm!";
+                        InsilunWarning.Text = "Blood Glucose Low Alarm!";
                         InsilunWarning.ForeColor = ColorTranslator.FromHtml("#71D91A"); // set insulin warning level color to AA safe color
                         string sCurrentDirectory = AppDomain.CurrentDomain.BaseDirectory;
                         string sFile = System.IO.Path.Combine(sCurrentDirectory, @"..\..\..\insulin_pump\Resorses\levelLow.wav");
@@ -171,7 +171,7 @@ namespace insulin_pump
                     }
                     else if (float.Parse(insulin_level) > 160 && insulinAlarm != 2)
                     {
-                        InsilunWarning.Text = "Insulin Level high Alarm!";
+                        InsilunWarning.Text = "Blood Glucose high Alarm!";
                         InsilunWarning.ForeColor = ColorTranslator.FromHtml("#71D91A"); // set insulin warning level color to AA safe color
                         string sCurrentDirectory = AppDomain.CurrentDomain.BaseDirectory;
                         string sFile = System.IO.Path.Combine(sCurrentDirectory, @"..\..\..\insulin_pump\Resorses\LevelHigh.wav");
@@ -181,7 +181,7 @@ namespace insulin_pump
                         insulinAlarm = 2;
                     }
                     else if (float.Parse(insulin_level) <= 160 && float.Parse(insulin_level) >= 70 && insulinAlarm != 0) {
-                        InsilunWarning.Text = "Insulin Level Acceptable";
+                        InsilunWarning.Text = "Blood Glucose Acceptable";
                         insulinAlarm = 0;
                         InsilunWarning.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // set insulin warning level color to AA safe color
                     }

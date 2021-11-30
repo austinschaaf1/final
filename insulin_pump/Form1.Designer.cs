@@ -180,9 +180,9 @@ namespace insulin_pump
             this.InsilunWarning.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.InsilunWarning.Location = new System.Drawing.Point(3, 103);
             this.InsilunWarning.Name = "InsilunWarning";
-            this.InsilunWarning.Size = new System.Drawing.Size(119, 48);
+            this.InsilunWarning.Size = new System.Drawing.Size(155, 48);
             this.InsilunWarning.TabIndex = 9;
-            this.InsilunWarning.Text = "Insulin Level Acceptable";
+            this.InsilunWarning.Text = "Blood Glucose Level Acceptable";
             this.toolTip1.SetToolTip(this.InsilunWarning, "Displays text if insilun is too high, low, or it is acceptable");
             // 
             // Line
