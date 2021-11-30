@@ -190,13 +190,16 @@ namespace insulin_pump
                 return;
 
             }
-            administerErrorLabel.Text = "Cannot Administer Insulin: Levels are acceptable";
-            administerErrorLabel.Visible = true;
-            t.Tick += (s, c) =>
+            if (float.Parse(insulinLevelAmountLabel.Text) <= 160 && int.Parse(remainingDosesAmountLabel.Text) > 0)
             {
-                administerErrorLabel.Visible = false;
-            };
-            t.Start();
+                administerErrorLabel.Text = "Cannot Administer Insulin: Levels are acceptable";
+                administerErrorLabel.Visible = true;
+                t.Tick += (s, c) =>
+                {
+                    administerErrorLabel.Visible = false;
+                };
+                t.Start();
+            }
 
             
 
@@ -259,6 +262,11 @@ namespace insulin_pump
         public void resevoirRefill()
         {
             resevoirRemainingAmountLabel.Text = 100.ToString();
+        }
+
+        private void insulinLevelTextLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

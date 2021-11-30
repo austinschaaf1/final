@@ -425,7 +425,7 @@ namespace insulin_pump
             this.setInsulinLevelLabel.Name = "setInsulinLevelLabel";
             this.setInsulinLevelLabel.Size = new System.Drawing.Size(131, 58);
             this.setInsulinLevelLabel.TabIndex = 25;
-            this.setInsulinLevelLabel.Text = "Set Insulin Level";
+            this.setInsulinLevelLabel.Text = "Set Blood Glucose Level";
             this.setInsulinLevelLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // setTimeCheckBox
