@@ -273,11 +273,12 @@ namespace insulin_pump
             this.insulinLevelTextLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.insulinLevelTextLabel.AutoSize = true;
             this.insulinLevelTextLabel.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.insulinLevelTextLabel.Location = new System.Drawing.Point(10, 250);
+            this.insulinLevelTextLabel.Location = new System.Drawing.Point(13, 250);
             this.insulinLevelTextLabel.Name = "insulinLevelTextLabel";
-            this.insulinLevelTextLabel.Size = new System.Drawing.Size(226, 19);
+            this.insulinLevelTextLabel.Size = new System.Drawing.Size(220, 19);
             this.insulinLevelTextLabel.TabIndex = 6;
-            this.insulinLevelTextLabel.Text = "Current Insulin Level (mg/dL): ";
+            this.insulinLevelTextLabel.Text = "Blood Glucose Level (mg/dL): ";
+            this.insulinLevelTextLabel.Click += new System.EventHandler(this.insulinLevelTextLabel_Click);
             // 
             // remainingDosesTextLabel
             // 
@@ -400,7 +401,7 @@ namespace insulin_pump
             chartArea1.AxisY.Interval = 40D;
             chartArea1.AxisY.Maximum = 400D;
             chartArea1.AxisY.Minimum = 0D;
-            chartArea1.AxisY.Title = "Insulin Level(mg/dL)";
+            chartArea1.AxisY.Title = "Blood Glucose Level(mg/dL)";
             chartArea1.AxisY.TitleFont = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             chartArea1.BackColor = System.Drawing.Color.LightSlateGray;
             chartArea1.Name = "ChartArea1";
