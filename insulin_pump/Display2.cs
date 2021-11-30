@@ -255,5 +255,10 @@ namespace insulin_pump
             offBtn.Font = new Font("Century Gothic", 12, FontStyle.Bold);
             autoM = 1;
         }
+
+        public void resevoirRefill()
+        {
+            resevoirRemainingAmountLabel.Text = 100.ToString();
+        }
     }
 }
