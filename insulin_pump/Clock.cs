@@ -38,6 +38,9 @@ namespace insulin_pump
                 String time = Clock1.Text;//get unedited time
                 Int32 count = 3;//amount to break apart the string
                 String[] timeParts = time.Split(':', (char)count, (char)StringSplitOptions.RemoveEmptyEntries);//broken apart string
+                String minutesString = "";
+                String secondsString = "";
+                String hoursString = "";
 
                 Int32 seconds = int.Parse(timeParts[2]) + 1;
                 Int32 minutes = int.Parse(timeParts[1]);
@@ -64,10 +67,22 @@ namespace insulin_pump
                 {
                     hours = 0;
                 }
-
+                minutesString = minutes.ToString();
+                secondsString = seconds.ToString();
+                hoursString = hours.ToString();
+                if(hours < 10)
+                {
+                    hoursString = "0"+ hoursString;
+                }
+                if (seconds < 10) {
+                    secondsString = "0" + secondsString;
+                }
+                if (minutes < 10) {
+                    minutesString = "0" + minutesString;
+                }
          
 
-                String newTime = $"{hours}:{minutes}:{seconds}";
+                String newTime = $"{hoursString}:{minutesString}:{secondsString}";
                 Clock1.Value = percentage;
                 Clock1.Update();
                 Clock1.Text = newTime;

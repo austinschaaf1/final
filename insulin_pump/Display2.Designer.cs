@@ -29,6 +29,7 @@ namespace insulin_pump
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataVisualization.Charting.HorizontalLineAnnotation horizontalLineAnnotation1 = new System.Windows.Forms.DataVisualization.Charting.HorizontalLineAnnotation();
             System.Windows.Forms.DataVisualization.Charting.HorizontalLineAnnotation horizontalLineAnnotation2 = new System.Windows.Forms.DataVisualization.Charting.HorizontalLineAnnotation();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
@@ -75,6 +76,7 @@ namespace insulin_pump
             this.administerInsulinButton = new System.Windows.Forms.Button();
             this.insulinDosingPanel = new loanCalculator.RoundPanel();
             this.insulinDosingChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.roundPanel1.SuspendLayout();
             this.insulinInformationPanel.SuspendLayout();
             this.insulinDosingPanel.SuspendLayout();
@@ -117,6 +119,7 @@ namespace insulin_pump
             this.offBtn.Size = new System.Drawing.Size(231, 52);
             this.offBtn.TabIndex = 8;
             this.offBtn.Text = "Off";
+            this.toolTip1.SetToolTip(this.offBtn, "Off disables all insulin administering");
             this.offBtn.UseVisualStyleBackColor = false;
             this.offBtn.Click += new System.EventHandler(this.offBtn_Click);
             // 
@@ -134,6 +137,7 @@ namespace insulin_pump
             this.runManualButton.Size = new System.Drawing.Size(231, 52);
             this.runManualButton.TabIndex = 7;
             this.runManualButton.Text = "Manual";
+            this.toolTip1.SetToolTip(this.runManualButton, "Selecting Manual allows you to administer insulin");
             this.runManualButton.UseVisualStyleBackColor = false;
             this.runManualButton.Click += new System.EventHandler(this.runManualButton_Click);
             // 
@@ -151,6 +155,7 @@ namespace insulin_pump
             this.runAutoButton.Size = new System.Drawing.Size(231, 52);
             this.runAutoButton.TabIndex = 6;
             this.runAutoButton.Text = "Auto";
+            this.toolTip1.SetToolTip(this.runAutoButton, "Selecting this has the system release insulin automatically");
             this.runAutoButton.UseVisualStyleBackColor = false;
             this.runAutoButton.Click += new System.EventHandler(this.runAutoButton_Click);
             // 
@@ -309,6 +314,7 @@ namespace insulin_pump
             this.lastDoseTimeLabel.TabIndex = 0;
             this.lastDoseTimeLabel.Text = "\nHH:mm:ss mm/dd/yyyy";
             this.lastDoseTimeLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.toolTip1.SetToolTip(this.lastDoseTimeLabel, "Displays the date and time of the last insulin dose");
             // 
             // lastDoseLabel
             // 
@@ -337,6 +343,7 @@ namespace insulin_pump
             this.administerInsulinButton.Size = new System.Drawing.Size(231, 52);
             this.administerInsulinButton.TabIndex = 5;
             this.administerInsulinButton.Text = "Administer Insulin";
+            this.toolTip1.SetToolTip(this.administerInsulinButton, "This allows you to administer a dose of insulin");
             this.administerInsulinButton.UseVisualStyleBackColor = false;
             this.administerInsulinButton.Click += new System.EventHandler(this.administerInsulinButton_Click);
             // 
@@ -443,6 +450,7 @@ namespace insulin_pump
             this.insulinDosingChart.Series.Add(series1);
             this.insulinDosingChart.Size = new System.Drawing.Size(429, 377);
             this.insulinDosingChart.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.insulinDosingChart, "The green line on the graph shows current insulin level");
             this.insulinDosingChart.Click += new System.EventHandler(this.chart1_Click);
             // 
             // Display2
@@ -487,5 +495,6 @@ namespace insulin_pump
         private System.Windows.Forms.Button runAutoButton;
         private System.Windows.Forms.Label administerErrorLabel;
         private System.Windows.Forms.Button offBtn;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
