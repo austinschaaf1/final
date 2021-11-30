@@ -63,6 +63,26 @@ namespace insulin_pump.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap administerInsulinHelp {
+            get {
+                object obj = ResourceManager.GetObject("administerInsulinHelp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap clockHelp {
+            get {
+                object obj = ResourceManager.GetObject("clockHelp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap green {
             get {
                 object obj = ResourceManager.GetObject("green", resourceCulture);
@@ -76,6 +96,16 @@ namespace insulin_pump.Properties {
         internal static System.Drawing.Bitmap LOGO_SMALL {
             get {
                 object obj = ResourceManager.GetObject("LOGO SMALL", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap messagesHelp {
+            get {
+                object obj = ResourceManager.GetObject("messagesHelp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

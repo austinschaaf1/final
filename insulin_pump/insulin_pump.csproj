@@ -186,5 +186,14 @@
   <ItemGroup>
     <None Include="Resorses\settings.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resorses\administerInsulinHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resorses\messagesHelp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resorses\clockHelp.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
