@@ -30,6 +30,7 @@ namespace insulin_pump
         private void InitializeComponent()
         {
             this.roundPanel1 = new loanCalculator.RoundPanel();
+            this.resevoirRefillLabel = new System.Windows.Forms.Label();
             this.lowInsulinLevelToggle = new insulin_pump.RJToggleButton();
             this.lowInsulinLevelLabel = new System.Windows.Forms.Label();
             this.deliveryToggle = new insulin_pump.RJToggleButton();
@@ -45,16 +46,15 @@ namespace insulin_pump
             this.testScenariosHeaderLabel = new System.Windows.Forms.Label();
             this.resevoirRemovalLabel = new System.Windows.Forms.Label();
             this.resevoirToggle = new insulin_pump.RJToggleButton();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.resetButton = new loanCalculator.RoundedButton();
             this.runTestButton = new loanCalculator.RoundedButton();
-            this.setInsulinLevelLabel = new System.Windows.Forms.Label();
-            this.timeLbl = new System.Windows.Forms.Label();
-            this.insulinLevelsToggle = new insulin_pump.RJToggleButton();
-            this.setTimeCheckBox = new insulin_pump.RJToggleButton();
             this.insulinLevelsNumBox = new System.Windows.Forms.NumericUpDown();
+            this.insulinLevelsToggle = new insulin_pump.RJToggleButton();
+            this.setInsulinLevelLabel = new System.Windows.Forms.Label();
+            this.setTimeCheckBox = new insulin_pump.RJToggleButton();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.timeLbl = new System.Windows.Forms.Label();
             this.resevoirRefillToggle = new insulin_pump.RJToggleButton();
-            this.resevoirRefillLabel = new System.Windows.Forms.Label();
             this.roundPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.insulinLevelsNumBox)).BeginInit();
             this.SuspendLayout();
@@ -115,6 +115,20 @@ namespace insulin_pump
             this.roundPanel1.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 16.25F, System.Drawing.FontStyle.Bold);
             this.roundPanel1.TitleForeColor = System.Drawing.Color.Empty;
             this.roundPanel1.TitleHatchStyle = System.Drawing.Drawing2D.HatchStyle.Horizontal;
+            // 
+            // resevoirRefillLabel
+            // 
+            this.resevoirRefillLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.resevoirRefillLabel.AutoSize = true;
+            this.resevoirRefillLabel.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resevoirRefillLabel.Location = new System.Drawing.Point(3, 488);
+            this.resevoirRefillLabel.Name = "resevoirRefillLabel";
+            this.resevoirRefillLabel.Size = new System.Drawing.Size(131, 61);
+            this.resevoirRefillLabel.TabIndex = 31;
+            this.resevoirRefillLabel.Text = "Refill Reservoir";
+            this.resevoirRefillLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lowInsulinLevelToggle
             // 
@@ -320,7 +334,7 @@ namespace insulin_pump
             this.resevoirRemovalLabel.Name = "resevoirRemovalLabel";
             this.resevoirRemovalLabel.Size = new System.Drawing.Size(131, 61);
             this.resevoirRemovalLabel.TabIndex = 10;
-            this.resevoirRemovalLabel.Text = "Removal of Insulin Resevoir";
+            this.resevoirRemovalLabel.Text = "Removal of Insulin Reservoir";
             this.resevoirRemovalLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // resevoirToggle
@@ -339,16 +353,6 @@ namespace insulin_pump
             this.resevoirToggle.TabIndex = 16;
             this.resevoirToggle.UseVisualStyleBackColor = false;
             this.resevoirToggle.CheckedChanged += new System.EventHandler(this.resevoirToggle_CheckedChanged);
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dateTimePicker1.Checked = false;
-            this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Location = new System.Drawing.Point(200, 569);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(105, 20);
-            this.dateTimePicker1.TabIndex = 1;
             // 
             // resetButton
             // 
@@ -379,64 +383,6 @@ namespace insulin_pump
             this.runTestButton.UseVisualStyleBackColor = true;
             this.runTestButton.Click += new System.EventHandler(this.runTestButton_Click);
             // 
-            // setInsulinLevelLabel
-            // 
-            this.setInsulinLevelLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.setInsulinLevelLabel.AutoSize = true;
-            this.setInsulinLevelLabel.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.setInsulinLevelLabel.Location = new System.Drawing.Point(3, 609);
-            this.setInsulinLevelLabel.Name = "setInsulinLevelLabel";
-            this.setInsulinLevelLabel.Size = new System.Drawing.Size(131, 58);
-            this.setInsulinLevelLabel.TabIndex = 25;
-            this.setInsulinLevelLabel.Text = "Set Insulin Level";
-            this.setInsulinLevelLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // timeLbl
-            // 
-            this.timeLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.timeLbl.AutoSize = true;
-            this.timeLbl.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timeLbl.Location = new System.Drawing.Point(3, 549);
-            this.timeLbl.Name = "timeLbl";
-            this.timeLbl.Size = new System.Drawing.Size(131, 60);
-            this.timeLbl.TabIndex = 1;
-            this.timeLbl.Text = "Set Time";
-            this.timeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // insulinLevelsToggle
-            // 
-            this.insulinLevelsToggle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.insulinLevelsToggle.Location = new System.Drawing.Point(141, 627);
-            this.insulinLevelsToggle.MinimumSize = new System.Drawing.Size(45, 22);
-            this.insulinLevelsToggle.Name = "insulinLevelsToggle";
-            this.insulinLevelsToggle.OffBackColor = System.Drawing.Color.Gray;
-            this.insulinLevelsToggle.OffToggleColor = System.Drawing.Color.WhiteSmoke;
-            this.insulinLevelsToggle.OnBackColor = System.Drawing.Color.MediumSlateBlue;
-            this.insulinLevelsToggle.OnToggleColor = System.Drawing.Color.WhiteSmoke;
-            this.insulinLevelsToggle.Size = new System.Drawing.Size(45, 22);
-            this.insulinLevelsToggle.TabIndex = 27;
-            this.insulinLevelsToggle.UseVisualStyleBackColor = true;
-            this.insulinLevelsToggle.CheckedChanged += new System.EventHandler(this.insulinLevelsToggle_CheckedChanged);
-            // 
-            // setTimeCheckBox
-            // 
-            this.setTimeCheckBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.setTimeCheckBox.Location = new System.Drawing.Point(141, 568);
-            this.setTimeCheckBox.MinimumSize = new System.Drawing.Size(45, 22);
-            this.setTimeCheckBox.Name = "setTimeCheckBox";
-            this.setTimeCheckBox.OffBackColor = System.Drawing.Color.Gray;
-            this.setTimeCheckBox.OffToggleColor = System.Drawing.Color.WhiteSmoke;
-            this.setTimeCheckBox.OnBackColor = System.Drawing.Color.MediumSlateBlue;
-            this.setTimeCheckBox.OnToggleColor = System.Drawing.Color.WhiteSmoke;
-            this.setTimeCheckBox.Size = new System.Drawing.Size(45, 22);
-            this.setTimeCheckBox.TabIndex = 24;
-            this.setTimeCheckBox.UseVisualStyleBackColor = true;
-            this.setTimeCheckBox.CheckedChanged += new System.EventHandler(this.setTimeCheckBox_CheckedChanged_1);
-            // 
             // insulinLevelsNumBox
             // 
             this.insulinLevelsNumBox.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -453,6 +399,74 @@ namespace insulin_pump
             this.insulinLevelsNumBox.Size = new System.Drawing.Size(108, 20);
             this.insulinLevelsNumBox.TabIndex = 26;
             // 
+            // insulinLevelsToggle
+            // 
+            this.insulinLevelsToggle.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.insulinLevelsToggle.Location = new System.Drawing.Point(141, 627);
+            this.insulinLevelsToggle.MinimumSize = new System.Drawing.Size(45, 22);
+            this.insulinLevelsToggle.Name = "insulinLevelsToggle";
+            this.insulinLevelsToggle.OffBackColor = System.Drawing.Color.Gray;
+            this.insulinLevelsToggle.OffToggleColor = System.Drawing.Color.WhiteSmoke;
+            this.insulinLevelsToggle.OnBackColor = System.Drawing.Color.MediumSlateBlue;
+            this.insulinLevelsToggle.OnToggleColor = System.Drawing.Color.WhiteSmoke;
+            this.insulinLevelsToggle.Size = new System.Drawing.Size(45, 22);
+            this.insulinLevelsToggle.TabIndex = 27;
+            this.insulinLevelsToggle.UseVisualStyleBackColor = true;
+            this.insulinLevelsToggle.CheckedChanged += new System.EventHandler(this.insulinLevelsToggle_CheckedChanged);
+            // 
+            // setInsulinLevelLabel
+            // 
+            this.setInsulinLevelLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.setInsulinLevelLabel.AutoSize = true;
+            this.setInsulinLevelLabel.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.setInsulinLevelLabel.Location = new System.Drawing.Point(3, 609);
+            this.setInsulinLevelLabel.Name = "setInsulinLevelLabel";
+            this.setInsulinLevelLabel.Size = new System.Drawing.Size(131, 58);
+            this.setInsulinLevelLabel.TabIndex = 25;
+            this.setInsulinLevelLabel.Text = "Set Insulin Level";
+            this.setInsulinLevelLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // setTimeCheckBox
+            // 
+            this.setTimeCheckBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.setTimeCheckBox.Location = new System.Drawing.Point(141, 568);
+            this.setTimeCheckBox.MinimumSize = new System.Drawing.Size(45, 22);
+            this.setTimeCheckBox.Name = "setTimeCheckBox";
+            this.setTimeCheckBox.OffBackColor = System.Drawing.Color.Gray;
+            this.setTimeCheckBox.OffToggleColor = System.Drawing.Color.WhiteSmoke;
+            this.setTimeCheckBox.OnBackColor = System.Drawing.Color.MediumSlateBlue;
+            this.setTimeCheckBox.OnToggleColor = System.Drawing.Color.WhiteSmoke;
+            this.setTimeCheckBox.Size = new System.Drawing.Size(45, 22);
+            this.setTimeCheckBox.TabIndex = 24;
+            this.setTimeCheckBox.UseVisualStyleBackColor = true;
+            this.setTimeCheckBox.CheckedChanged += new System.EventHandler(this.setTimeCheckBox_CheckedChanged_1);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dateTimePicker1.Checked = false;
+            this.dateTimePicker1.Enabled = false;
+            this.dateTimePicker1.Location = new System.Drawing.Point(200, 569);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(105, 20);
+            this.dateTimePicker1.TabIndex = 1;
+            // 
+            // timeLbl
+            // 
+            this.timeLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.timeLbl.AutoSize = true;
+            this.timeLbl.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeLbl.Location = new System.Drawing.Point(3, 549);
+            this.timeLbl.Name = "timeLbl";
+            this.timeLbl.Size = new System.Drawing.Size(131, 60);
+            this.timeLbl.TabIndex = 1;
+            this.timeLbl.Text = "Set Time";
+            this.timeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // resevoirRefillToggle
             // 
             this.resevoirRefillToggle.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -468,20 +482,6 @@ namespace insulin_pump
             this.resevoirRefillToggle.TabIndex = 30;
             this.resevoirRefillToggle.UseVisualStyleBackColor = true;
             this.resevoirRefillToggle.CheckedChanged += new System.EventHandler(this.resevoirRefillToggle_CheckedChanged);
-            // 
-            // resevoirRefillLabel
-            // 
-            this.resevoirRefillLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.resevoirRefillLabel.AutoSize = true;
-            this.resevoirRefillLabel.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resevoirRefillLabel.Location = new System.Drawing.Point(3, 488);
-            this.resevoirRefillLabel.Name = "resevoirRefillLabel";
-            this.resevoirRefillLabel.Size = new System.Drawing.Size(131, 61);
-            this.resevoirRefillLabel.TabIndex = 31;
-            this.resevoirRefillLabel.Text = "Refill Resevoir";
-            this.resevoirRefillLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TestScenarios
             // 

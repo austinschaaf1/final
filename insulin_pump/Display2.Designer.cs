@@ -223,11 +223,11 @@ namespace insulin_pump
             this.resevoirRemainingTextLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.resevoirRemainingTextLabel.AutoSize = true;
             this.resevoirRemainingTextLabel.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resevoirRemainingTextLabel.Location = new System.Drawing.Point(25, 98);
+            this.resevoirRemainingTextLabel.Location = new System.Drawing.Point(21, 98);
             this.resevoirRemainingTextLabel.Name = "resevoirRemainingTextLabel";
-            this.resevoirRemainingTextLabel.Size = new System.Drawing.Size(197, 38);
+            this.resevoirRemainingTextLabel.Size = new System.Drawing.Size(204, 38);
             this.resevoirRemainingTextLabel.TabIndex = 10;
-            this.resevoirRemainingTextLabel.Text = "Resevoir Doses Remaining \r\n(Units):";
+            this.resevoirRemainingTextLabel.Text = "Reservoir Doses Remaining \r\n(Units):";
             this.resevoirRemainingTextLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // insulinLevelAmountLabel

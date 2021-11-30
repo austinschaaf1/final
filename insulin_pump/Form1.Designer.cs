@@ -123,8 +123,8 @@ namespace insulin_pump
             this.resevoirDosesRemainingTextLabel.Name = "resevoirDosesRemainingTextLabel";
             this.resevoirDosesRemainingTextLabel.Size = new System.Drawing.Size(166, 51);
             this.resevoirDosesRemainingTextLabel.TabIndex = 7;
-            this.resevoirDosesRemainingTextLabel.Text = "Resevoir Doses\r\nRemaining: ";
-            this.toolTip1.SetToolTip(this.resevoirDosesRemainingTextLabel, "Displays the total amount of doses remaining in resevoir");
+            this.resevoirDosesRemainingTextLabel.Text = "Reservoir Doses\r\nRemaining: ";
+            this.toolTip1.SetToolTip(this.resevoirDosesRemainingTextLabel, "Displays the total amount of doses remaining in reservoir");
             // 
             // remainingDosesQNLabel
             // 
@@ -182,7 +182,7 @@ namespace insulin_pump
             this.InsilunWarning.Name = "InsilunWarning";
             this.InsilunWarning.Size = new System.Drawing.Size(119, 48);
             this.InsilunWarning.TabIndex = 9;
-            this.InsilunWarning.Text = "Insilun Level Acceptable";
+            this.InsilunWarning.Text = "Insulin Level Acceptable";
             this.toolTip1.SetToolTip(this.InsilunWarning, "Displays text if insilun is too high, low, or it is acceptable");
             // 
             // Line
