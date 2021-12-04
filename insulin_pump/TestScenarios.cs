@@ -254,12 +254,14 @@ namespace insulin_pump
             setTimeCheckBox.Checked = false;
             insulinLevelsToggle.Checked = false;
             lowInsulinLevelToggle.Checked = false;
+            resevoirRefillToggle.Checked = false;
             mainForm.display1.resevoirReset();
             mainForm.display1.needleReset();
             mainForm.display1.batteryReset();
             mainForm.display1.sensorReset();
             mainForm.display1.pumpReset();
             mainForm.display1.deliveryReset();
+            mainForm.display1.resevoirRefillReset();
                
         }
 

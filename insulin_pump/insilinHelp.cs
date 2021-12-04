@@ -14,6 +14,7 @@ namespace insulin_pump
     {
         public insilinHelp()
         {
+            //Load insulin help page
             InitializeComponent();
         }
     }

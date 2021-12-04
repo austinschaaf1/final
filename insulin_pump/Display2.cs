@@ -12,15 +12,15 @@ namespace insulin_pump
 {
     public partial class Display2 : Form
     {
-        //Form1 mainForm;
+        //Display 2 is administer insulin, this shows the user a graph and allows them to administer insulin, they can also put the insulin pump in auto mode
         int counter;
         Int32 autoM = 0;
         public Display2()
         {
             InitializeComponent();
-            //this.mainForm = passedForm;
+            //Set all background colors and text colors to custom colors
             this.BackColor = ColorTranslator.FromHtml("#11258C"); // set background of form to AAA safe contrast color
-            lastDoseTimeLabel.Text = DateTime.Now.ToLocalTime().ToString();
+            lastDoseTimeLabel.Text = DateTime.Now.ToLocalTime().ToString();//Get system time
             administerInsulinButton.BackColor = ColorTranslator.FromHtml("#4D8C18"); // set test senarios color to AA safe color
             administerInsulinButton.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // Test start out white color
             runAutoButton.BackColor = ColorTranslator.FromHtml("#4D8C18"); // set test senarios color to AA safe color
@@ -34,9 +34,6 @@ namespace insulin_pump
             offBtn.BackColor = ColorTranslator.FromHtml("#4D8C18"); // set test senarios color to AA safe color
             offBtn.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // Test start out white color
             offBtn.Font = new Font("Century Gothic", 12, FontStyle.Bold);
-            
-
-
         }
 
         public void generateChartPoints(string text)
@@ -45,8 +42,8 @@ namespace insulin_pump
 
             String time = text;//get unedited time
             Int32 count = 3;//amount to break apart the string
-            String[] timeParts = time.Split(':', (char)count, (char)StringSplitOptions.RemoveEmptyEntries);
-            Int32 hours = int.Parse(timeParts[0]);
+            String[] timeParts = time.Split(':', (char)count, (char)StringSplitOptions.RemoveEmptyEntries); //Break time into 3 parts
+            Int32 hours = int.Parse(timeParts[0]); //Get time in hours for chart
 
             Random rand = new Random();
             counter = 0;
@@ -58,10 +55,8 @@ namespace insulin_pump
 
             for (int i = 0; i < hours; i++)
             {
-           
                 if(insert == 0)
                 {
-                    
                     holder = rand.Next(20, 300);
                     insulinDosingChart.Series[0].Points.AddXY(i,holder);
                     if (holder >= 160)
@@ -144,6 +139,7 @@ namespace insulin_pump
         }
 
         public void autoModeCheck() {
+            //This is the core fuctionality of the automode, if insulin is too high it will change values regarding blood glucose ext
             if (float.Parse(insulinLevelAmountLabel.Text) >= 160 && int.Parse(remainingDosesAmountLabel.Text) > 0 && autoM == 1)
             {
                 insulinLevelAmountLabel.Text = (float.Parse(insulinLevelAmountLabel.Text) - 50).ToString();
@@ -152,7 +148,6 @@ namespace insulin_pump
                 insulinDosingChart.Series[0].Points[counter].YValues[0] = int.Parse(insulinLevelAmountLabel.Text);
                 insulinDosingChart.Refresh();
                 return;
-
             }
         }
 
@@ -207,6 +202,7 @@ namespace insulin_pump
 
         private void offBtn_Click(object sender, EventArgs e)
         {
+            //Clicking the offBtn will change the other button colors to less vibrant for Auto, manual, and administer insulin. Administer insulin will be completely disabled
             administerInsulinButton.Enabled = false;
 
             runAutoButton.BackColor = ColorTranslator.FromHtml("#4D8C18"); // set test senarios color to AA safe color
@@ -225,6 +221,7 @@ namespace insulin_pump
 
         private void runManualButton_Click(object sender, EventArgs e)
         {
+            //Clicking the run manual button will change the other button colors to less vibrant for Auto, and off, the user will be allowed to administer insulin
             administerInsulinButton.Enabled = true;
 
             runAutoButton.BackColor = ColorTranslator.FromHtml("#4D8C18"); // set test senarios color to AA safe color
@@ -243,6 +240,7 @@ namespace insulin_pump
 
         private void runAutoButton_Click(object sender, EventArgs e)
         {
+            //Clicking the run auto button will change the other button colors to less vibrant for manual and off, the user will not be allowed to administer insulin the system will do that
             administerInsulinButton.Enabled = false;
 
             runAutoButton.BackColor = ColorTranslator.FromHtml("#71D91A"); // set test senarios color to AA safe color

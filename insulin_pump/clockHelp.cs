@@ -14,6 +14,7 @@ namespace insulin_pump
     {
         public clockHelp()
         {
+            //This code loads the clock help page
             InitializeComponent();
         }
 

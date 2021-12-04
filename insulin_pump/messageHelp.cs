@@ -14,6 +14,7 @@ namespace insulin_pump
     {
         public messageHelp()
         {
+            //Load messages help page
             InitializeComponent();
         }
     }

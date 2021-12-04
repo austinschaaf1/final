@@ -13,6 +13,7 @@ namespace insulin_pump
 {
     public partial class Display1 : Form
     {
+        //This page Loads the messages page, the messages page displays system messages
         public Display1()
         {
             InitializeComponent();
@@ -96,13 +97,10 @@ namespace insulin_pump
             insulinSystemLabel.Text = "Status OK!";
             insulinLevelLight.Image = Properties.Resources.green;
         }
-    
-
-
-
-
-
-
+        public void resevoirRefillReset() {
+            insulinSystemLabel.Text = "Status OK!";
+            insulinLevelLight.Image = Properties.Resources.green;
+        }
         private void roundPanel1_Paint(object sender, PaintEventArgs e)
         {
         }
