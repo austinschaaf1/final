@@ -14,13 +14,16 @@ namespace insulin_pump
     {
         public settings()
         {
+            //This opens the beta help page
             InitializeComponent();
+            //Set backgound colors
             this.BackColor = ColorTranslator.FromHtml("#11258C"); // set background of form to AAA safe contrast color
             hdrLbl.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // set header color to AAA safe color
         }
 
         private void Closebtn_Click(object sender, EventArgs e)
         {
+            //Beta feture popup
             popup.Text = "This is a beta feature and settings will not be applied at this time";
         }
     }

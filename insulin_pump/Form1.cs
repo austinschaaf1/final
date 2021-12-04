@@ -14,7 +14,7 @@ namespace insulin_pump
 {
     public partial class Form1 : Form
     {
-        
+        //Form 1 handles system notifications, the navigation bar and handles opening and closing other pages
         public Display1 display1 = new Display1();
         public Display2 display2 = new Display2();
         public Int32 isClockOpen = 0;
@@ -34,11 +34,12 @@ namespace insulin_pump
             // seldom use action color green 10% #71D91A
             //Safe color for action green 10% black
             
+            //get current time and initiallize The clock to system time
             DateTime dt = DateTime.Now;
             dt.ToString("HH:mm:ss");
             timeLbl.Text = dt.ToString("HH:mm:ss");
 
-
+            //Set all colors for background of the panels
             panelSide.BackColor = ColorTranslator.FromHtml("#304CD9"); // set background of left pannel to AA safe contrast color
             panelheader.BackColor = ColorTranslator.FromHtml("#304CD9"); // set background of top pannel to AA safe contrast color
             QuickNotificationlbl.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // set quickNotificationlbl color to AA safe color
@@ -47,6 +48,7 @@ namespace insulin_pump
             BatterylvlLbl.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // set battery level color to AA safe color
             InsilunWarning.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // set battery level color to AA safe color
 
+            //Below sets the navigation button colors 
             testScenariosButton.BackColor = ColorTranslator.FromHtml("#4D8C18"); // set test senarios color to AA safe color
             testScenariosButton.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // Test start out white color
             battryLbl.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // set battry color to AA safe color
@@ -77,10 +79,12 @@ namespace insulin_pump
 
             whatIsOpen = 0;//display 1 is open
             isSettingsOpen = 0;
+            //This sets the timer to start once the system is initialized
             System.Timers.Timer timer1 = new System.Timers.Timer();
             timer1.Interval = 1000; //1000 ms == 1second
             timer1.Elapsed += Time_changed;
             timer1.Start();
+            //Start the program with messages open
             loadform(display1);
         }
 
@@ -91,6 +95,7 @@ namespace insulin_pump
         }
 
         public void loadform(object Form) {
+            //Allows for interior forms to be placed like messages, ext
             if (this.mainpanel.Controls.Count > 0) {
                 this.mainpanel.Controls.RemoveAt(0);   
             }
@@ -114,6 +119,7 @@ namespace insulin_pump
                     Int32 count = 3;//amount to break apart the string
                     String[] timeParts = time.Split(':', (char)count, (char)StringSplitOptions.RemoveEmptyEntries);//broken apart string
 
+                    //Get int version of seconds, minutes, hours and increment seconds
                     Int32 seconds = int.Parse(timeParts[2]) + 1;
                     Int32 minutes = int.Parse(timeParts[1]);
                     Int32 hours = int.Parse(timeParts[0]);
@@ -122,19 +128,21 @@ namespace insulin_pump
                     String hoursString = "";
 
                     if (seconds == 60)
-                    {
+                    {//if seconds is 60 set seconds to zero and increment minutes
                         seconds = 0;
                         minutes += 1;
                     }
                     if (minutes == 60)
-                    {
+                    {//if minutes is 60 set minutes to zero and increment hours
                         minutes = 0;
                         hours += 1;
                     }
                     if (hours == 24)
-                    {
+                    {//if 24 hours has past set hours to zero
                         hours = 0;
                     }
+
+                    //The below lines check if seconds,minutes,hours is less then 10, if it is add a leading zero so 1 = 01 
                     minutesString = minutes.ToString();
                     secondsString = seconds.ToString();
                     hoursString = hours.ToString();
@@ -151,15 +159,15 @@ namespace insulin_pump
                         minutesString = "0" + minutesString;
                     }
 
-
+                    //Properly format clock time
                     String newTime = $"{hoursString}:{minutesString}:{secondsString}";
 
                    
-                    timeLbl.Text = newTime;
+                    timeLbl.Text = newTime;// Enter a new time label as a hidden time to keep track of it in other pages
 
                     string insulin_level = display2.getInsulinLevelAmount();
                     if (float.Parse(insulin_level) < 70 && insulinAlarm != 1)
-                    {
+                    {   //If the Blood Glucose level is too low signal an alarm 
                         InsilunWarning.Text = "Blood Glucose Low Alarm!";
                         InsilunWarning.ForeColor = ColorTranslator.FromHtml("#71D91A"); // set insulin warning level color to AA safe color
                         string sCurrentDirectory = AppDomain.CurrentDomain.BaseDirectory;
@@ -170,7 +178,7 @@ namespace insulin_pump
                         insulinAlarm = 1;
                     }
                     else if (float.Parse(insulin_level) > 160 && insulinAlarm != 2)
-                    {
+                    {   //If the blood glucose is too high signal an alarm
                         InsilunWarning.Text = "Blood Glucose high Alarm!";
                         InsilunWarning.ForeColor = ColorTranslator.FromHtml("#71D91A"); // set insulin warning level color to AA safe color
                         string sCurrentDirectory = AppDomain.CurrentDomain.BaseDirectory;
@@ -181,6 +189,7 @@ namespace insulin_pump
                         insulinAlarm = 2;
                     }
                     else if (float.Parse(insulin_level) <= 160 && float.Parse(insulin_level) >= 70 && insulinAlarm != 0) {
+                        //If the blood glucose is safe change alarm text
                         InsilunWarning.Text = "Blood Glucose Acceptable";
                         insulinAlarm = 0;
                         InsilunWarning.ForeColor = ColorTranslator.FromHtml("#F0EBE6"); // set insulin warning level color to AA safe color
@@ -189,14 +198,13 @@ namespace insulin_pump
 
                         if (timeLbl.Text == "23:59:59")
                     {
+                        //Every 24 hours reset daily doses
                         display2.setRemainingDosesMax();
                     }
                     if ((minutes == 00 && seconds == 00) || (minutes == 10 && seconds == 00) || (minutes == 20 && seconds == 00) || (minutes == 30 && seconds == 00) || (minutes == 40 && seconds == 00) || (minutes == 50 && seconds == 00)) {
+                        //Every 10 minutes if it is in auto mode administer insulin
                         display2.autoModeCheck();
-
-
                     }
-
                 });
             }
             catch { }
@@ -324,6 +332,7 @@ namespace insulin_pump
 
         private void Helpbtn_Click(object sender, EventArgs e)
         {
+            //If help buton is click dinamically change the help page based on previous page
             if (whatIsOpen == 0 && isHelpOpen == 0)
             {
                 loadform(new messageHelp());
@@ -376,18 +385,10 @@ namespace insulin_pump
 
         private void settingbtn_Click(object sender, EventArgs e)
         {
-         
+                //If settings button was click open setting page and change close help to help
                 loadform(new settings());
                 whatIsOpen = 4;
-   
-     
-            Helpbtn.Text = "Help";
-
-
-
-
+                Helpbtn.Text = "Help";
         }
-
-        ///Creating test push
     }
 }
