@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace insulin_pump
 {
-    public partial class Display2 : Form
+    public partial class AdministerInsulin : Form
     {
         //Display 2 is administer insulin, this shows the user a graph and allows them to administer insulin, they can also put the insulin pump in auto mode
         int counter;
         Int32 autoM = 0;
-        public Display2()
+        public AdministerInsulin()
         {
             InitializeComponent();
             //Set all background colors and text colors to custom colors

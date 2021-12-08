@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace insulin_pump
 {
-    public partial class insilinHelp : Form
+    public partial class InsulinHelp : Form
     {
-        public insilinHelp()
+        public InsulinHelp()
         {
             //Load insulin help page
             InitializeComponent();

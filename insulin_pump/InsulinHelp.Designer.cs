@@ -1,7 +1,7 @@
 ﻿
 namespace insulin_pump
 {
-    partial class insilinHelp
+    partial class InsulinHelp
     {
         /// <summary>
         /// Required designer variable.

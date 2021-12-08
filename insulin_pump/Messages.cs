@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace insulin_pump
 {
-    public partial class Display1 : Form
+    public partial class Messages : Form
     {
         //This page Loads the messages page, the messages page displays system messages
-        public Display1()
+        public Messages()
         {
             InitializeComponent();
             this.BackColor = ColorTranslator.FromHtml("#11258C"); // set background of form to AAA safe contrast color

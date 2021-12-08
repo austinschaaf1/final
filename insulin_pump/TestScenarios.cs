@@ -21,10 +21,10 @@ namespace insulin_pump
         int deliveryFailing = 0;
 
 
-        Form1 mainForm;
+        OrcaOraclesPump mainForm;
 
 
-        public TestScenarios(Form1 passedForm)
+        public TestScenarios(OrcaOraclesPump passedForm)
         {
             InitializeComponent();
             this.mainForm = passedForm;
